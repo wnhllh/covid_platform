@@ -1,0 +1,26 @@
+{
+  "ret": true,
+  "data": {
+    "categories":[{
+        "id": "0001",
+        "title": "370 Jay Street",
+        "imgUrl": "https://www.stephenvilletx.gov/sites/default/files/styles/full_node_primary_extra_wide/public/imageattachments/parks-leisure/page/6001/library_4.jpg"
+      }, {
+        "id": "0002",
+        "title": "2 Metrotech",
+        "imgUrl": "https://blogs.nottingham.ac.uk/geography/files/2019/05/NYU-Bobst-Library-exterior.jpg"
+      },{
+        "id": "0003",
+        "title": "Rogers Hall",
+        "imgUrl": "http://images.takungpao.com/2015/0716/20150716084731377.jpg"
+      },{
+        "id": "0004",
+        "title": "Washington Square",
+        "imgUrl": "https://p9.itc.cn/images01/20211204/4e6d983f7abe42f7abb752548f5b7f25.jpeg"
+      },{
+        "id": "0005",
+        "title": "Bobst Library",
+        "imgUrl": "https://i3.jueshifan.com/205a28/7c047d81/7b5121d91beabc5d923f.jpg"
+      }]
+  }
+}
