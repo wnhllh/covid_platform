@@ -1,98 +1,31 @@
-import React, { Component } from 'react'
-import { View, Text, Image, ScrollView, FlatList } from 'react-native'
 import { connect } from 'react-redux'
-import axios from 'axios'
-import styles from './style'
+import { getSetRefreshingAction, getChangeListAction, getListAction } from './actionCreator'
 
-const baseUrl = 'http://127.0.0.1:5000';
+import List from './UI'
 
-class List extends Component {
-    constructor(props) {
-        super(props)
-        this.handleListRefresh = this.handleListRefresh.bind(this)
-    }
-
-    render() {
-        return (
-            <FlatList 
-                onRefresh={this.handleListRefresh}
-                refreshing={this.props.refreshing}
-                data = {this.props.list}
-                keyExtractor = {(item, index) => index} //should be item.id
-                renderItem = {({item}) => {
-                    return (<View style={styles.item}>
-                            <View style={styles.subitem}>
-                            <Image 
-                                source={require('../../resource/imgs/banner.png')}
-                                // source={{uri: item.imgUrl}} 
-                                style={styles.icon}
-                            />
-                            <Text style={styles.name}>{item.user_id}</Text>
-                            <Text style={styles.rating}>★★★☆☆</Text>
-                            </View>
-
-                            <View style={styles.info}>
-                            <Text style={styles.review}>{item.review}</Text>
-                            </View>
-                        </View>)
-                }} 
-            />
-        )
-    }
-
-    componentDidMount() {
-        this.getList()
-    }
-
-    // getList() {
-    //     // alert(this.props.route.params.id)
-    //     let id = this.props.route.params.id
-    //     let url = "http://www.llh.com/api/category.json?id=" + "0001"
-    //     fetch(url)
-    //         .then(res => res.json())
-    //         .then(this.props.changeListInfo)
-    // }
-
-    getList = async () => {
-
-        await axios.get(`${baseUrl}/review/get`)
-        .then((res)=>{ 
-          this.props.changeListInfo(res)
-      })
-    }
-
-    handleListRefresh() {
-        this.props.changeRefresh()
-        this.getList()
-    }
-}
-
-const mapState = (state) => {
+const mapState = (state, ownProps) => {
     return {
         list: state.list.list,
-        refreshing: state.list.refreshing
+        refreshing: state.list.refreshing,
+        navigate: ownProps.navigation.navigate
     }
 }
 
-const mapDispatch = (dispatch) => {
+const mapDispatch = (dispatch, ownProps) => {
     return {
+        getListData() {
+            dispatch(getListAction(ownProps.route.params.id, true));
+        },
+        handleListRefresh() {
+            const action = getSetRefreshingAction();
+            dispatch(action);
+            dispatch(getListAction(ownProps.route.params.id, false));
+        },
         changeListInfo(res) {
             if (res.data) {
-                console.log(res.data)
-                const action = {
-                    type: 'CHANGE_LIST',
-                    list: res.data,
-                    refreshing: false
-                }
+                const action = getChangeListAction(res.data);
                 dispatch(action);
             }
-        },
-        changeRefresh() {
-            const action = {
-                type: "CHANGE_REFRESH",
-                value: true
-            }
-            dispatch(action);
         }
     }
 }

@@ -1,14 +1,7 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import reducer from './reducer'
+import thunk from 'redux-thunk'
 
-// const defaultState = {
-//     name: 'llh'
-// }
-
-// const store = createStore((state = defaultState, action) => {
-//     return state;
-// })
-
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunk));
 
 export default store

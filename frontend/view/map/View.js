@@ -52,6 +52,8 @@ const ExploreScreen = () => {
         })}
       </MapView>
 
+      
+
       <ScrollView
         ref={viewRef}
         horizontal

@@ -5,19 +5,6 @@ const CARD_HEIGHT = 220;
 const CARD_WIDTH = width * 0.8;
 const CARD_SPACING = width * 0.1 - 10;
 
-// const styles = StyleSheet.create({
-//     container: {
-//       flex: 1,
-//       backgroundColor: '#fff',
-//       alignItems: 'center',
-//       justifyContent: 'center',
-//     },
-//     map: {
-//       width: Dimensions.get('window').width,
-//       height: Dimensions.get('window').height,
-//     },
-//   });
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -28,6 +15,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     paddingVertical: 10,
+    bottom: 105
   },
   card: {
     elevation: 2,
