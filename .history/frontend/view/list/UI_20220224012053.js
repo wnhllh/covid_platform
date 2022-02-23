@@ -13,7 +13,7 @@ export default class List extends Component {
                 <ImageBackground
                     source={require('../../resource/imgs/test.png')}
                     style={styles.backgroudImage} >
-    <TouchableOpacity onPress={() => {this.props.navigation.goBack()}}>
+                    <TouchableOpacity onPress={() => {this.props.navigation.navigate.goBack()}}>
                     <View style={styles.navbar}>
                         <FontAwesome name="chevron-left" color={'white'} size={30}  />
                     </View>
