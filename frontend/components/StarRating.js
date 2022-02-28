@@ -12,13 +12,13 @@ const StarRating = (props) => {
             name = 'ios-star-outline';
         }
 
-        stars.push((<Ionicons name={name} size={15} style={styles.star} key={i} />));
+        stars.push((<Ionicons name={name} size={13} style={styles.star} key={i} />));
     }
 
     return (
         <View style={ styles.container }>
             { stars }
-            <Text style={styles.text}>({props.reviews})</Text>
+            { props.reviews != 0 && <Text style={styles.text}>({props.reviews})</Text>}
         </View>
     );
 	
@@ -29,13 +29,15 @@ export default StarRating;
 const styles = StyleSheet.create({
 	container: {
 		flexDirection: 'row',
-		alignItems: 'center'
+		alignItems: 'center',
+        marginTop: 1,
+        marginLeft: 1
 	},
 	star: {
 		color: '#FF8C00'
 	},
 	text: {
-		fontSize: 12,
+		fontSize: 11,
         marginLeft: 5,
         color: '#444',
 	}

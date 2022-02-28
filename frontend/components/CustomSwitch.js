@@ -22,11 +22,13 @@ export default function xx({selectionMode,
                 onPress={() => updateSwitchData(index+1)}
                 style={{
                     flex: 1,
-                    backgroundColor: getSelectionMode == index+1 ? '#7d7d7d' : '#e4e4e4',
-                    borderRadius: 7,
+                    backgroundColor: getSelectionMode == index+1 ? 'gray' : 'white',
+                    borderRadius: 5,
+                    marginLeft: 5,
+                    marginRight: 5,
                     justifyContent: 'center',
                     alignItems: 'center',
-                    height: 30,
+                    height: 27,
                 }}
                 >
                 <Text 
@@ -48,10 +50,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        height: 35, width:'100%', backgroundColor:'#e6e6e6', borderRadius:7, borderColor:'#ad40af'
+        height: 35, width:'100%', backgroundColor:'#f1f1f1', borderRadius:7, borderColor:'#ad40af'
     },
     listText: {
-        fontSize: 14,
+        fontSize: 12,
         fontWeight: 'bold',
         color: 'gray',
     },

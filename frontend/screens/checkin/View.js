@@ -12,6 +12,6 @@ export default class Detail extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.route.params.id)
+        // console.log(this.props.route.params.id)
     }
 }

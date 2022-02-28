@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import { reducer as venue } from '../screens/venue';
-import { reducer as report } from '../screens/create-trial';
-import { reducer as list } from '../screens/detail';
+import { reducer as venue } from '../screens/view/venue';
+import { reducer as report } from '../screens/report-staff-trial';
+import { reducer as list } from '../screens/view/detail';
 
 const reducer = combineReducers({
     venue: venue,

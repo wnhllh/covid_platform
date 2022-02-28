@@ -3,11 +3,11 @@ import React from 'react';
 import { StyleSheet, View, Image, TouchableOpacity } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import Venue from '../screens/venue/View'
+import { View as Venue } from '../screens/home'
 import Map from '../screens/map/View'
-import Report from '../screens/review/View'
-import Review from '../screens/create/View'
-import Trial from '../screens/create-trial/App'
+import Report from '../screens/report-user/View'
+import Check from '../screens/check-user/View'
+import Trial from '../screens/report-staff-trial/App'
 
 // import RouteApp from './StackNavigator'
 
@@ -30,7 +30,7 @@ const TabNavigator = () => {
                     right: 20,
                     elavation: 0,
                     borderRadius: 15,
-                    height: 65,
+                    height: 55,
                     ...styles.shadow
                     },
                 tabBarInactiveTintColor: '#999999',
@@ -42,29 +42,28 @@ const TabNavigator = () => {
             <Tab.Screen name="VENUE" component={Venue} options={{
                 tabBarIcon: ({color, size}) => (
                 <View style={styles.tabBar}>
-                    <Ionicons name="md-home-sharp" color={color} size={size} />
+                    <Ionicons name="md-home-sharp" color={color} size={size-3} />
                 </View>
             )}}></Tab.Screen>
 
-            <Tab.Screen name="REVIEW" component={Review} 
+            <Tab.Screen name="CHECK" component={Check} 
             options={{
                 tabBarIcon: ({color, size}) => (
                 <View style={styles.tabBar}>
-                <Ionicons name="md-chatbox-ellipses-sharp" color={color} size={size} style={{right:7}} />
+                <Ionicons name="qr-code-sharp" color={color} size={size-3} style={{right:7}} />
                 </View>),
                 }}></Tab.Screen>
 
             <Tab.Screen name="MAP" component={Map} options={{tabBarIcon: 
                 () => (
                     <Ionicons
-                        name="md-map-sharp" color={'#ffffff'} size={29}
+                        name="md-map-sharp" color={'#ffffff'} size={25}
                         resizeMode="contain"
                         style={{
-                            width: 30,
-                            height: 30,
+                            width: 25,
+                            height: 25,
                             justifyContent: 'center',
                             alignItems: 'center',
-                            bottom: 1,
                         }}
                     />
                 ),
@@ -73,13 +72,13 @@ const TabNavigator = () => {
 
             <Tab.Screen name="REPORT" component={Report} options={{tabBarIcon: ({color, size}) => (
                 <View style={styles.tabBar}>
-                <Ionicons name="md-sync-circle-sharp" color={color} size={size+3} style={{left:7}} />
+                <Ionicons name="md-chatbox-ellipses-sharp" color={color} size={size-3} style={{left:7}} />
                 </View>
             )}}></Tab.Screen>
 
             <Tab.Screen name="TRIAL" component={Trial} options={{tabBarIcon: ({color, size}) => (
                 <View style={styles.tabBar}>
-                <Ionicons name="md-settings-sharp" color={color} size={size} />
+                <Ionicons name="md-settings-sharp" color={color} size={size-3} />
                 </View>
             )}}></Tab.Screen>
 
@@ -109,8 +108,8 @@ const styles = StyleSheet.create({
     },
     text: {
         top: -15,
-        width: 60,
-        height: 60,
+        width: 55,
+        height: 55,
         borderRadius: 30,
         backgroundColor: '#007aff',
 
