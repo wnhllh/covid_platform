@@ -6,7 +6,7 @@ from flask_cors import CORS
 import datetime
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:123123@localhost/map'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:poiu0987@localhost/map'
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 CORS(app)
