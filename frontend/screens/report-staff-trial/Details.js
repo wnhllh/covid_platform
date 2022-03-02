@@ -2,8 +2,9 @@ import React from 'react';
 import { View, ScrollView, Text } from 'react-native';
 import { Button } from 'react-native-paper';
 import axios from 'axios';
+import baseUrl from '../../assets/constants/BaseUrl'
 
-const baseUrl = 'http://127.0.0.1:5000';
+// const baseUrl = 'http://127.0.0.1:5000';
 
 function Details(props) {
     const data = props.route.params.data; 

@@ -3,8 +3,9 @@ import { Image, StyleSheet, Text, View,  FlatList, jsonify } from "react-native"
 import { Card, TextInput, Button, FAB } from "react-native-paper";
 import { connect } from "react-redux";
 import axios from 'axios';
+import baseUrl from '../../assets/constants/BaseUrl'
 
-const baseUrl = 'http://127.0.0.1:5000';
+// const baseUrl = 'http://127.0.0.1:5000';
 
 class App extends React.Component{
 
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         margin: 16,
         right: 0,
-        bottom: 0
+        bottom: 100
     },
     input1: {
         padding: 10,

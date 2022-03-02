@@ -2,8 +2,9 @@ import React from "react";
 import { Image, StyleSheet, Text, TextInput, Button, View,  FlatList } from "react-native";
 import { connect } from 'react-redux';
 import axios from 'axios';
+import baseUrl from '../../assets/constants/BaseUrl'
 
-const baseUrl = 'http://127.0.0.1:5000';
+// const baseUrl = 'http://127.0.0.1:5000';
 
 class Create extends React.Component{
 
