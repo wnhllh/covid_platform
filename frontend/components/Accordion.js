@@ -10,7 +10,7 @@ import {
 import { windowHeight, windowWidth } from '../assets/constants/Dimensions';
 import Foundation from 'react-native-vector-icons/Foundation'
 
-const Accordion = ({ children, press, childFunc }) => {
+const Accordion = ({ children, press = () => {}, childFunc = () => {} }) => {
   const [childrenAnimation] = useState(new Animated.Value(0));
   const [expanded, setExpanded] = useState(false);
 

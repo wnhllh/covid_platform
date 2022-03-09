@@ -20,6 +20,16 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
         elevation: 10
     },
+    shadow: {
+        shadowColor: 'gray',
+        shadowOffset: {
+            width: 5,
+            height: 5
+        },
+        shadowOpacity: 0.1,
+        shadowRadius: 2,
+        elevation: 10
+    },
     subitem: {
         display: 'flex',
         flexDirection: 'column',
@@ -67,8 +77,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#f7f7f7'
     },
     backgroudImage: {
-        height: Dimensions.get('window').height * .275
+        // position: 'absolute',
+        width: '100%',
     },
+
     navbar: {
         flexDirection: 'row',
         alignItems: 'baseline',
@@ -98,28 +110,29 @@ const styles = StyleSheet.create({
         borderRadius: 20
     },
     badge: {
+        zIndex:2,
         backgroundColor: 'white',
         padding: 20,
-        paddingBottom: 30,
-        paddingTop: 10,
-        borderRadius: 10,
-        width: Dimensions.get('window').width * .90,
+        width: Dimensions.get('window').width * .975,
         alignSelf: 'center',
-        marginTop: 10,
+        margin: 5,
+        borderRadius: 10,
+        marginHorizontal: 5,
+
 
         shadowColor: 'gray',
         shadowOffset: {
             width: 0,
-            height: 10
+            height: 5
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.5,
         elevation: 5
     },
     reviewWrapper: {
-        height: Dimensions.get('window').height * 0.625,
-        marginTop: Dimensions.get('window').height * .11,
-        padding: 10,
+        // height: Dimensions.get('window').height * 0.625,
+        marginTop: Dimensions.get('window').height * .2,
+        // padding: 10,
     },
     socialIcon: {
         alignSelf: 'center',
@@ -127,17 +140,16 @@ const styles = StyleSheet.create({
     infoContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: 15
     },
     infoText: {
-        fontSize: 14
+        fontSize: 15
     },
     infoTitle: {
-        fontSize: 14,
+        fontSize: 15,
         fontWeight: 'bold'
     },
     descText: {
-        fontSize: 12,
+        fontSize: 12.5,
         color: 'gray',
         marginTop: 5
 
@@ -166,12 +178,57 @@ const styles = StyleSheet.create({
         elevation: 5
     },
     buttonWrapper: {
+        zIndex: 3,
         position: 'absolute',
-        left: 17.5,
-        right: 17.5,
-        bottom: 50,
-        // bottom: Dimensions.get('window').height * .1,
+        top: Dimensions.get('window').height -75,
+        left: 30,
+        right: 30,
     },
+    backButton: {
+        position: 'absolute',
+        top: -105,
+        left: 20,
+        backgroundColor: 'rgba(0,0,0,0.4)',
+        height:35,
+        width: 35,
+        borderRadius: 20,
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    line: {
+		width: Dimensions.get('window').width * .5 - 20,
+		height: 1,
+		backgroundColor: '#d1d1d1',
+		alignSelf: 'center',
+		marginVertical: 2.5,
+		borderRadius: 2,
+	},
+    categories: {
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        flexWrap: 'wrap',
+      },
+      categoryContainer: {
+        flexDirection: 'row',
+        backgroundColor: '#ffdb4d',
+        borderRadius: 15,
+        margin: 10,
+        marginBottom: 0,
+        padding: 7.5,
+        paddingHorizontal: 10,
+      },
+      category: {
+        fontSize: 13,
+        color: '#fff',
+        marginLeft: 10,
+      },
+      section: {
+        padding: 20,
+        borderBottomWidth: 1,
+        borderBottomColor: '#cccccc',
+        backgroundColor: 'white',
+      },
     button: {
         height: 50,
         marginHorizontal: 20,

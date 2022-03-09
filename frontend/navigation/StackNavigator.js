@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Start  from '../screens/start/View'
+import Start from '../screens/start/View'
 import List from '../screens/view/detail/View'
 import Detail from '../screens/checkin/View'
 import Home from './TabNavigator'
@@ -15,9 +15,9 @@ function RouteApp() {
       <Stack.Navigator
         initialRouteName="Start"
       >
-        <Stack.Screen name="Start" component={Start} options={{headerShown: false}}/>
-        <Stack.Screen name="Home" component={Home} options={{headerShown: false}}/>
-        <Stack.Screen name="List" component={List} options={{headerShown: false}}/>
+        <Stack.Screen name="Start" component={Start} options={{ headerShown: false }} />
+        <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+        <Stack.Screen name="List" component={List} options={{ headerShown: false }} />
         <Stack.Screen name="Detail" component={Detail} />
       </Stack.Navigator>
     </NavigationContainer>
