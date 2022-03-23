@@ -95,6 +95,17 @@ const styles = StyleSheet.create({
       fontSize: 16,
       fontWeight: 'bold',
     },
+    subtitle: {
+      marginLeft: 15,
+      marginVertical: 10,
+    },
+    subtitleText: {
+      fontSize: 13,
+      fontWeight: 'bold',
+      // fontFamily: '',
+      color: 'grey',
+
+    },
     textWrapper: {
       flexDirection: 'row',
       marginTop: 2,

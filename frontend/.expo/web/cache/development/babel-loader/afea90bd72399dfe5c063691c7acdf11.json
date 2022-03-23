@@ -1,0 +1,1 @@
+{"ast":null,"code":"import reducer from \"./reducer\";\nexport { reducer };","map":{"version":3,"sources":["/Users/llh/Documents/map/frontend/screens/view/detail/index.js"],"names":["reducer"],"mappings":"AAAA,OAAOA,OAAP;AAEA,SAASA,OAAT","sourcesContent":["import reducer from './reducer';\n\nexport { reducer }"]},"metadata":{},"sourceType":"module"}

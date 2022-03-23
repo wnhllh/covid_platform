@@ -1,103 +1,79 @@
-import React, { useState } from 'react'
-import { Text, View } from 'react-native'
-import SelectBox from 'react-native-multi-selectbox'
-import { xorBy } from 'lodash'
+import React, { useState, useEffect } from 'react';
+import { Text, View, StyleSheet, Button } from 'react-native';
+import { BarCodeScanner } from 'expo-barcode-scanner';
 
-// Options data must contain 'item' & 'id' keys
+export default function App() {
+  const [hasPermission, setHasPermission] = useState(null);
+  const [scanned, setScanned] = useState(false);
+  const [text, setText] = useState('Not yet scanned')
 
-const K_OPTIONS = [
-  {
-    item: 'Juventus',
-    id: 'JUVE',
-  },
-  {
-    item: 'Real Madrid',
-    id: 'RM',
-  },
-  {
-    item: 'Barcelona',
-    id: 'BR',
-  },
-  {
-    item: 'PSG',
-    id: 'PSG',
-  },
-  {
-    item: 'FC Bayern Munich',
-    id: 'FBM',
-  },
-  {
-    item: 'Manchester United FC',
-    id: 'MUN',
-  },
-  {
-    item: 'Manchester City FC',
-    id: 'MCI',
-  },
-  {
-    item: 'Everton FC',
-    id: 'EVE',
-  },
-  {
-    item: 'Tottenham Hotspur FC',
-    id: 'TOT',
-  },
-  {
-    item: 'Chelsea FC',
-    id: 'CHE',
-  },
-  {
-    item: 'Liverpool FC',
-    id: 'LIV',
-  },
-  {
-    item: 'Arsenal FC',
-    id: 'ARS',
-  },
+  const askForCameraPermission = () => {
+    (async () => {
+      const { status } = await BarCodeScanner.requestPermissionsAsync();
+      setHasPermission(status === 'granted');
+    })()
+  }
 
-  {
-    item: 'Leicester City FC',
-    id: 'LEI',
-  },
-]
+  // Request Camera Permission
+  useEffect(() => {
+    askForCameraPermission();
+  }, []);
 
-function App() {
-  const [selectedTeam, setSelectedTeam] = useState({})
-  const [selectedTeams, setSelectedTeams] = useState([])
+  // What happens when we scan the bar code
+  const handleBarCodeScanned = ({ type, data }) => {
+    setScanned(true);
+    setText(data)
+    console.log('Type: ' + type + '\nData: ' + data)
+  };
+
+  // Check permissions and return the screens
+  if (hasPermission === null) {
+    return (
+      <View style={styles.container}>
+        <Text>Requesting for camera permission</Text>
+      </View>)
+  }
+  if (hasPermission === false) {
+    return (
+      <View style={styles.container}>
+        <Text style={{ margin: 10 }}>No access to camera</Text>
+        <Button title={'Allow Camera'} onPress={() => askForCameraPermission()} />
+      </View>)
+  }
+
+  // Return the View
   return (
-    <View style={{ margin: 30 }}>
-      <View style={{ width: '100%', alignItems: 'center' }}>
-        <Text style={{ fontSize: 30, paddingBottom: 20 }}>Demos</Text>
+    <View style={styles.container}>
+      <View style={styles.barcodebox}>
+        <BarCodeScanner
+          onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+          style={{ height: 400, width: 400 }} />
       </View>
-      <Text style={{ fontSize: 20, paddingBottom: 10 }}>Select Demo</Text>
-      <SelectBox
-        label="Select single"
-        options={K_OPTIONS}
-        value={selectedTeam}
-        onChange={onChange()}
-        hideInputFilter={false}
-        style={{ color: 'blue'}}
-      />
-      <View style={{ height: 40 }} />
-      <Text style={{ fontSize: 20, paddingBottom: 10 }}>MultiSelect Demo</Text>
-      <SelectBox
-        label="Select multiple"
-        options={K_OPTIONS}
-        selectedValues={selectedTeams}
-        onMultiSelect={onMultiChange()}
-        onTapClose={onMultiChange()}
-        isMulti
-      />
+      <Text style={styles.maintext}>{text}</Text>
+
+      {scanned && <Button title={'Scan again?'} onPress={() => setScanned(false)} color='tomato' />}
     </View>
-  )
-
-  function onMultiChange() {
-    return (item) => setSelectedTeams(xorBy(selectedTeams, [item], 'id'))
-  }
-
-  function onChange() {
-    return (val) => setSelectedTeam(val)
-  }
+  );
 }
 
-export default App
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  maintext: {
+    fontSize: 16,
+    margin: 20,
+  },
+  barcodebox: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 500,
+    width: 500,
+    overflow: 'hidden',
+    borderRadius: 30,
+    backgroundColor: 'white'
+  }
+});

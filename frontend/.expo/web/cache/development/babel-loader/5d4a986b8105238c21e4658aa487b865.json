@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default {\n  primary: '#821752'\n};","map":{"version":3,"sources":["/Users/llh/Documents/map/frontend/node_modules/react-native-multi-selectbox/src/constants/Colors.js"],"names":["primary"],"mappings":"AAAA,eAAe;AACbA,EAAAA,OAAO,EAAE;AADI,CAAf","sourcesContent":["export default {\n  primary: '#821752',\n}\n"]},"metadata":{},"sourceType":"module"}

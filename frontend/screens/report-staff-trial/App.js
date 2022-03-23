@@ -8,14 +8,14 @@ import Edit from './Edit'
 const Tab = createNativeStackNavigator();
 
 function Report() {
-    return (
-        <Tab.Navigator initialRouteName="View">
-            <Tab.Screen name="Venues Created by Me" component={App}></Tab.Screen>
-            <Tab.Screen name="Create" component={Create} />
-            <Tab.Screen name="Details" component={Details} />
-            <Tab.Screen name="Edit" component={Edit} />
-        </Tab.Navigator>
-    );
+	return (
+		<Tab.Navigator initialRouteName="View">
+			<Tab.Screen name="Venues Created by Me" component={App}></Tab.Screen>
+			<Tab.Screen name="Create" component={Create} />
+			<Tab.Screen name="Details" component={Details} />
+			<Tab.Screen name="Edit" component={Edit} />
+		</Tab.Navigator>
+	);
 }
 
 export default Report;

@@ -1,108 +1,113 @@
-import React from "react";
-import { Image, StyleSheet, Text, View,  FlatList, jsonify } from "react-native";
+import React, { useEffect } from "react";
+import { Image, StyleSheet, Text, View, FlatList, jsonify } from "react-native";
 import { Card, TextInput, Button, FAB } from "react-native-paper";
 import { connect } from "react-redux";
 import axios from 'axios';
 import baseUrl from '../../assets/constants/BaseUrl'
 
-// const baseUrl = 'http://127.0.0.1:5000';
+App = (props) => {
+	useEffect(() => {
+		props.getVenuesInfo();
+	});
 
-class App extends React.Component{
+	const clickedItem = (data) => {
+		props.navigation.navigate('Details', { data: data });
+	}
 
-    render() {
-        return (
-            <View style={styles.container}>
-                <FlatList 
-                    data={this.props.venues.venues} 
-                    renderItem = {(data) => {   return this.renderData(data) }} 
-                    keyExtractor = {data => `${data.id}`}
-                />
+	const renderData = (item) => {
+		return (
+			<Card style={styles.card}>
+				<Text style={styles.title} onPress={() => clickedItem(item)}>{item.item.name}</Text>
+				<Text>{item.item.description}</Text>
+			</Card>
+		)
+	}
 
-                <FAB
-                    style = {styles.fab}
-                    small = {false}
-                    icon = "plus"
-                    theme = {{colors:{accent:"green"}}} 
-                    onPress = {() => this.props.navigation.navigate('Create')}
-                />
-            </View>
-        );
-    }
+	return (
+		<View style={styles.container}>
+			<FlatList
+				data={props.venues.venues}
+				renderItem={(data) => { return renderData(data) }}
+				keyExtractor={data => `${data.id}`}
+			/>
 
-componentDidMount = async () => {
-    await axios.get(`${baseUrl}/venue/get`)
-    .then((res)=>{ 
-        this.props.setState(res)
-    })
+			<FAB
+				style={styles.fab}
+				small={false}
+				icon="plus"
+				theme={{ colors: { accent: "green" } }}
+				onPress={() => props.navigation.navigate('Create')}
+			/>
+		</View>
+	)
 }
 
-clickedItem = (data) => {
-    this.props.navigation.navigate('Details', {data: data});
-}
+const getSetState = (data) => {
+	return {
+		type: 'SET_STATE',
+		venues: data.data
+	}
+};
 
-renderData = (item) => {
-    return (
-        <Card style={styles.card}>
-            <Text style={styles.title} onPress={() => this.clickedItem(item)}>{item.item.name}</Text>
-            <Text>{item.item.description}</Text>
-        </Card>
-    )
-}
-}
+const getVenueInfo = () => async dispatch => {
+	const res = await axios.get(`${baseUrl}/venue/get`)
+	if (res) {
+		const action = getSetState(res)
+		dispatch(action)
+	}
+};
 
 const mapState = (state) => {
-    return {
-        venues: state.report
-    }
+	return {
+		venues: state.report
+	}
 }
 
 const mapDispatch = (dispatch) => {
-    return {
-      setState(res) {
-        if(res.data) {
-          const action = {
-            type: 'SET_STATE',
-            venues: res.data
-          }  
-          dispatch(action)
-        }
-      }
-    }
-  }
+	return {
+		getVenuesInfo() {
+			dispatch(getVenueInfo())
+		},
+		setState(res) {
+			const action = getSetState(res)
+			dispatch(action)
+		}
+	}
+}
 
 export default connect(mapState, mapDispatch)(App)
 
 const styles = StyleSheet.create({
-    container: {
-        display: 'flex',
-        flex: 1
-    },
-    card: {
-        flex: 1,
-        margin: 10,
-        padding: 20,
-    },
-    title: {
-        fontSize: 17
-    },
-    fab: {
-        position: "absolute",
-        margin: 16,
-        right: 0,
-        bottom: 100
-    },
-    input1: {
-        padding: 10,
-        marginLeft: 20,
-        marginRight: 20,
-        marginTop: 10,
-        height: 30
-    },
-    input2: {
-        padding: 10,
-        marginLeft: 20,
-        marginRight: 20,
-        marginTop: 10,
-        height: 60
-    }
+	container: {
+		display: 'flex',
+		flex: 1
+	},
+	card: {
+		flex: 1,
+		margin: 10,
+		padding: 20,
+	},
+	title: {
+		fontSize: 17
+	},
+	fab: {
+		position: "absolute",
+		margin: 16,
+		right: 0,
+		bottom: 100
+	},
+	input1: {
+		padding: 10,
+		marginLeft: 20,
+		marginRight: 20,
+		marginTop: 10,
+		height: 30
+	},
+	input2: {
+		padding: 10,
+		marginLeft: 20,
+		marginRight: 20,
+		marginTop: 10,
+		height: 60
+	}
 });

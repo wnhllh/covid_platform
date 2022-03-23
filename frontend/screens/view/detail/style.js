@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#f7f7f7'
     },
     backgroudImage: {
-        // position: 'absolute',
+        // top: -200,
         width: '100%',
     },
 

@@ -1,6 +1,5 @@
 import { SET_CATEGORIES, SET_TAB } from './actionType';
 
-
 const defaultState = {
 	categories: [],
 	tab: 1,

@@ -9,6 +9,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  searchBox: {
+    position:'absolute', 
+    marginTop: 40, 
+    justifyContent: 'space-between',
+    flexDirection:"row",
+    backgroundColor: '#fff',
+    width: '90%',
+    alignSelf:'center',
+    borderRadius: 5,
+    padding: 10,
+    shadowColor: '#ccc',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
+    elevation: 10,
+  },
   scrollView: {
     position: "absolute",
     bottom: 0,
