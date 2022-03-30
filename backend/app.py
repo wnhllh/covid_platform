@@ -15,14 +15,20 @@ class Venue(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     description = db.Column(db.Text())
+    latitude = db.Column(db.Numeric)
+    longitude = db.Column(db.Numeric)
+    image_num = db.Column(db.Integer)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.datetime.utcnow)
     
     # def __repr__(self):
     #     return f"Venue: {self.name}"
        
-    def __init__(self, name, description):
+    def __init__(self, name, description, latitude, longitude, image_num):
         self.name = name
         self.description = description
+        self.latitude = latitude
+        self.longitude = longitude
+        self.image_num = image_num
         
 class Review(db.Model):
     user_id = db.Column(db.Integer, primary_key=True)
@@ -40,7 +46,7 @@ class Review(db.Model):
 
 class VenueSchema(ma.Schema):
     class Meta:
-        fields = ('id', 'name', 'description', 'created_at')
+        fields = ('id', 'name', 'description', 'latitude', 'longitude', 'image_num', 'created_at')
         
 class ReviewSchema(ma.Schema):
     class Meta:
@@ -61,7 +67,10 @@ def index():
 def add_venue():
     name = request.json['name']
     description = request.json['description']  
-    venue = Venue(name, description)
+    latitude = request.json['latitude']
+    longitude = request.json['longitude']
+    image_num = request.json['image_num']
+    venue = Venue(name, description, latitude, longitude, image_num)
     db.session.add(venue)
     db.session.commit() 
     return venue_schema.jsonify(venue)
@@ -78,6 +87,12 @@ def get_venue(id):
     result = venue_schema.jsonify(venue)
     return result
 
+@app.route('/venue/get/last', methods=['GET'])
+def get_venue_last():
+    venue = Venue.query.get(id)
+    result = venue_schema.jsonify(venue)
+    return result
+
 @app.route('/venue/update/<id>', methods=['PUT'])
 def update_venue(id):
     venue = Venue.query.get(id)
@@ -85,6 +100,15 @@ def update_venue(id):
     description = request.json['description']  
     venue.name = name
     venue.description = description
+    db.session.commit()
+    result = venue_schema.jsonify(venue)
+    return result
+
+@app.route('/venue/upload/<id>', methods=['PUT'])
+def upload_venue(id):
+    venue = Venue.query.get(id)
+    image_num = request.json['image_num']  
+    venue.image_num = image_num
     db.session.commit()
     result = venue_schema.jsonify(venue)
     return result
@@ -112,4 +136,3 @@ def get_reviews_venue(id):
 
 if __name__ == '__main__':
     app.run()
-

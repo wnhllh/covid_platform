@@ -4,6 +4,7 @@ import App from './View'
 import Create from './Create'
 import Details from './Details'
 import Edit from './Edit'
+import Upload from './Upload'
 
 const Tab = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ function Report() {
 			<Tab.Screen name="Create" component={Create} />
 			<Tab.Screen name="Details" component={Details} />
 			<Tab.Screen name="Edit" component={Edit} />
+			<Tab.Screen name="Upload" component={Upload} />
 		</Tab.Navigator>
 	);
 }

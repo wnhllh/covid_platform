@@ -6,6 +6,7 @@ import Start from '../screens/start/View'
 import List from '../screens/view/detail/View'
 import Detail from '../screens/checkin/View'
 import Form from '../screens/form/View'
+import Uploader from '../screens/view/upload/View'
 import Home from './TabNavigator'
 
 const Stack = createNativeStackNavigator();
@@ -21,6 +22,7 @@ function RouteApp() {
         <Stack.Screen name="List" component={List} options={{ headerShown: false }} />
         <Stack.Screen name="Detail" component={Detail} options={{ headerShown: false }} />
         <Stack.Screen name="Form" component={Form} options={{ headerShown: false }} />
+        <Stack.Screen name="Uploader" component={Uploader} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

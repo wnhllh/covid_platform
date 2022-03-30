@@ -1,13 +1,13 @@
 import { StyleSheet, View } from 'react-native';
 import React, { useEffect, useCallback } from 'react';
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
+import Animated, { useAnimatedStyle, useSharedValue, withSpring, interpolate, Extrapolate } from 'react-native-reanimated';
 
-import Animated, { Extrapolate, interpolate, useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated'
 
 import { windowWidth, windowHeight } from '../../assets/constants/Dimensions';
 
-const BottomSheet = ({ children, childFunc, childScroll, scrollY }) => {
 
+const BottomSheet = ({ children, childFunc = ()=>{}, childScroll= ()=>{}, scrollY }) => {
 	const translateY = useSharedValue(0);
 	const context = useSharedValue({y:0});
 

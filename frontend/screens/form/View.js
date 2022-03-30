@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { View, ScrollView, TouchableOpacity } from 'react-native';
-import { Header, SafeAreaView, Icon, Text, Button } from 'react-native';
+import { Header, SafeAreaView, Icon, Text } from 'react-native';
 
 import SingleCheckbox from '../../components/SingleCheckbox';
 import MultiCheckbox from '../../components/MultiCheckbox';
 import Sign from '../../components/Sign';
 import DatePicker from '../../components/DatePicker';
+import BackButton from '../../components/BackButton';
+import Button from '../../components/Button'
 
-import Feather from 'react-native-vector-icons/Feather'
 import styles from './styles';
 
 export default function Form(props) {
@@ -24,11 +25,7 @@ export default function Form(props) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ zIndex: 2 }}>
-        <TouchableOpacity onPress={() => { props.navigation.goBack() }}>
-          <View style={[styles.backButton, { position: 'absolute', top: 5, left: 20, }]}>
-            <Feather name="chevron-left" color="white" size={26}></Feather>
-          </View>
-        </TouchableOpacity>
+
       </View>
       <View style={styles.contain}>
         <View>
@@ -97,11 +94,7 @@ export default function Form(props) {
 
       {/* button */}
       <View style={[styles.buttonWrapper]}>
-        <TouchableOpacity onPress={() => { props.navigation.navigate('Detail', { id: 1 }) }}>
-          <View style={styles.button}>
-            <Text style={styles.buttonText}>Submit</Text>
-          </View>
-        </TouchableOpacity>
+        <Button text={"Submit"} navigation={() => {props.navigation.navigate('Detail', { id: 1 })}} />        
       </View>
     </SafeAreaView>
   )

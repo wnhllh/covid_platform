@@ -16,9 +16,10 @@ App = (props) => {
 
 	const renderData = (item) => {
 		return (
-			<Card style={styles.card}>
+			<Card style={styles.card}>			
 				<Text style={styles.title} onPress={() => clickedItem(item)}>{item.item.name}</Text>
 				<Text>{item.item.description}</Text>
+				<Text>{props.venues.venues.length}</Text>
 			</Card>
 		)
 	}
@@ -71,7 +72,7 @@ const mapDispatch = (dispatch) => {
 		setState(res) {
 			const action = getSetState(res)
 			dispatch(action)
-		}
+		},
 	}
 }
 

@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import {
   StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, Dimensions,
-  //  Animated,
+  Animated,
 } from "react-native";
 import MapView, { PROVIDER_GOOGLE, Marker } from "react-native-maps";
 
-import Animated, { call, useCode, useSharedValue, useAnimatedReaction, useAnimatedScrollHandler, useAnimatedStyle } from 'react-native-reanimated';
 import { TextInput } from 'react-native-gesture-handler';
 
 import StarRating from '../../components/Rating';
@@ -32,78 +31,44 @@ const Map = () => {
 
   const [state, setState] = useState(initialState);
 
-  // let mapAnimation = new Animated.Value(0);
-  const index = useSharedValue(0);
+  let index = 0;
+  let mapAnimation = new Animated.Value(0);
 
   const mapRef = useRef(null);
   const viewRef = useRef(null);
 
   // //////////////////////////////////////////////////////////////////
-  
+
   useEffect(() => {
     console.log(index.value)
   })
-  
-  const scrollHandler = useAnimatedScrollHandler((event) => {
-    // console.log(event.contentOffset.x)
-    index.value = Math.floor(event.contentOffset.x / CARD_WIDTH + 0.3);
-    // console.log(index.value);
-
-  })
-
-  // const scroll = () => {
-  //   "worklet";
-  //   clearTimeout(regionTimeout);
-  //   const regionTimeout = setTimeout(() => {
-  //     const { coordinate } = state.markers[index.value];
-  //     mapRef.current.animateToRegion(
-  //       {
-  //         ...coordinate,
-  //         latitudeDelta: state.region.latitudeDelta,
-  //         longitudeDelta: state.region.longitudeDelta,
-  //       },
-  //       350
-  //     );
-  //   // }
-  // }, 10);
-  // }
-
-  useAnimatedReaction(() => index.value,
-  (next, prev) =>
-  {
-    if (next !== prev && prev !== null) {
-      console.log(next, prev);
-      // scroll();
-    }
-  });
 
   // //////////////////////////////////
 
-  // mapAnimation.addListener(({ value }) => {
-  //   index = Math.floor(value / CARD_WIDTH + 0.3);
-  //   if (index >= state.markers.length) {
-  //     index = state.markers.length - 1;
-  //   }
-  //   if (index <= 0) {
-  //     index = 0;
-  //   }
-  //   console.log(index);
+  mapAnimation.addListener(({ value }) => {
+    index = Math.floor(value / CARD_WIDTH + 0.3);
+    if (index >= state.markers.length) {
+      index = state.markers.length - 1;
+    }
+    if (index <= 0) {
+      index = 0;
+    }
+    console.log(index);
 
-  //   clearTimeout(regionTimeout);
+    clearTimeout(regionTimeout);
 
-  //       const regionTimeout = setTimeout(() => {
-  //           const { coordinate } = state.markers[index];
-  //           mapRef.current.animateToRegion(
-  //             {
-  //               ...coordinate,
-  //               latitudeDelta: state.region.latitudeDelta,
-  //               longitudeDelta: state.region.longitudeDelta,
-  //             },
-  //             350
-  //           );
-  //         // }
-  //       }, 10);
-  // });
+    const regionTimeout = setTimeout(() => {
+      const { coordinate } = state.markers[index];
+      mapRef.current.animateToRegion(
+        {
+          ...coordinate,
+          latitudeDelta: state.region.latitudeDelta,
+          longitudeDelta: state.region.longitudeDelta,
+        },
+        350
+      );
+    }, 10);
+  });
 
   const onMarkerPress = (mapEventData) => {
     const markerID = mapEventData._targetInst.return.key;
@@ -146,8 +111,18 @@ const Map = () => {
         snapToAlignment="center"
         style={styles.scrollView}
         contentInset={{ top: 0, left: CARD_SPACING, bottom: 0, right: CARD_SPACING }}
-        // contentContainerStyle={{paddingHorizontal: 10}}
-        onScroll={scrollHandler}
+        onScroll={Animated.event(
+          [
+            {
+              nativeEvent: {
+                contentOffset: {
+                  x: mapAnimation,
+                }
+              },
+            },
+          ],
+          { useNativeDriver: true }
+        )}
       >
         {state.markers.map((marker, index) => (
           <View style={styles.card} key={index}>

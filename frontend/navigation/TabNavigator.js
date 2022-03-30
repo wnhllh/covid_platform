@@ -4,7 +4,7 @@ import { StyleSheet, View, Image, TouchableOpacity } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { View as Venue } from '../screens/home'
-import Map from '../screens/map/View'
+import Map from '../screens/map/View copy'
 import Report from '../screens/report-user/View'
 import Check from '../screens/check-user/View'
 import Trial from '../screens/report-staff-trial/App'
@@ -56,6 +56,7 @@ const TabNavigator = () => {
 				}}></Tab.Screen>
 
 			<Tab.Screen name="MAP" component={Map} options={{
+				tabBarStyle: { display: "none" },
 				tabBarIcon:
 					() => (
 						<Ionicons
