@@ -27,7 +27,7 @@
     "@react-navigation/native-stack": "^6.1.0",
     "aws-amplify": "^4.3.17",
     "axios": "^0.25.0",
-    "expo": "~44.0.0",
+    "expo": "^44.0.6",
     "expo-asset": "~8.4.4",
     "expo-barcode-scanner": "~11.2.0",
     "expo-blur": "~11.0.0",

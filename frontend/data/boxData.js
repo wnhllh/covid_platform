@@ -80,6 +80,5 @@ const items = [
       ratio: 190 / 145,
     },
   ]
-
-
+  
 export default items;
