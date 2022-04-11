@@ -1,3 +1,3 @@
-import View from './View copy'
+import View from './View'
 
 export { View }

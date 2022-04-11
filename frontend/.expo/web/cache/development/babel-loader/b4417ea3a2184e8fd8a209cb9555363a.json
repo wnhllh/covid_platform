@@ -1,0 +1,41 @@
+{
+	"ast": null,
+	"code": "import StyleSheet from \"react-native-web/dist/exports/StyleSheet\";\nexport default StyleSheet.create({\n  contain: {\n    flexDirection: 'row',\n    width: '100%',\n    height: 85\n  },\n  contentLeft: {\n    flex: 3.5,\n    justifyContent: 'center',\n    alignItems: 'center'\n  },\n  containRight: {\n    flex: 6.5,\n    justifyContent: 'center',\n    alignItems: 'flex-end'\n  },\n  starLeft: {\n    flex: 3.5,\n    justifyContent: 'center',\n    alignItems: 'flex-end'\n  },\n  lineStar: {\n    height: 10,\n    flexDirection: 'row',\n    alignItems: 'center'\n  },\n  containStatus: {\n    flex: 6.5,\n    justifyContent: 'center'\n  },\n  contentLineStatus: {\n    height: 10,\n    justifyContent: 'center',\n    marginLeft: 10\n  },\n  lineStatusGray: {\n    height: 3,\n    width: '100%',\n    borderRadius: 1.5,\n    backgroundColor: '#f1f1f1'\n  },\n  lineStatusPrimary: {\n    height: 3,\n    width: '10%',\n    borderTopLeftRadius: 1.5,\n    borderBottomLeftRadius: 1.5,\n    position: 'absolute'\n  }\n});",
+	"map": {
+		"version": 3,
+		"sources": [
+			"/Users/llh/Documents/map/frontend/components/RatingTable/styles.js"
+		],
+		"names": [
+			"StyleSheet",
+			"create",
+			"contain",
+			"flexDirection",
+			"width",
+			"height",
+			"contentLeft",
+			"flex",
+			"justifyContent",
+			"alignItems",
+			"containRight",
+			"starLeft",
+			"lineStar",
+			"containStatus",
+			"contentLineStatus",
+			"marginLeft",
+			"lineStatusGray",
+			"borderRadius",
+			"backgroundColor",
+			"lineStatusPrimary",
+			"borderTopLeftRadius",
+			"borderBottomLeftRadius",
+			"position"
+		],
+		"mappings": ";AAEA,eAAeA,UAAU,CAACC,MAAX,CAAkB;AAC/BC,EAAAA,OAAO,EAAE;AACPC,IAAAA,aAAa,EAAE,KADR;AAEPC,IAAAA,KAAK,EAAE,MAFA;AAGPC,IAAAA,MAAM,EAAE;AAHD,GADsB;AAM/BC,EAAAA,WAAW,EAAE;AACXC,IAAAA,IAAI,EAAE,GADK;AAEXC,IAAAA,cAAc,EAAE,QAFL;AAGXC,IAAAA,UAAU,EAAE;AAHD,GANkB;AAW/BC,EAAAA,YAAY,EAAE;AACZH,IAAAA,IAAI,EAAE,GADM;AAEZC,IAAAA,cAAc,EAAE,QAFJ;AAGZC,IAAAA,UAAU,EAAE;AAHA,GAXiB;AAgB/BE,EAAAA,QAAQ,EAAE;AACRJ,IAAAA,IAAI,EAAE,GADE;AAERC,IAAAA,cAAc,EAAE,QAFR;AAGRC,IAAAA,UAAU,EAAE;AAHJ,GAhBqB;AAqB/BG,EAAAA,QAAQ,EAAE;AACRP,IAAAA,MAAM,EAAE,EADA;AAERF,IAAAA,aAAa,EAAE,KAFP;AAGRM,IAAAA,UAAU,EAAE;AAHJ,GArBqB;AA0B/BI,EAAAA,aAAa,EAAE;AAACN,IAAAA,IAAI,EAAE,GAAP;AAAYC,IAAAA,cAAc,EAAE;AAA5B,GA1BgB;AA2B/BM,EAAAA,iBAAiB,EAAE;AACjBT,IAAAA,MAAM,EAAE,EADS;AAEjBG,IAAAA,cAAc,EAAE,QAFC;AAGjBO,IAAAA,UAAU,EAAE;AAHK,GA3BY;AAgC/BC,EAAAA,cAAc,EAAE;AACdX,IAAAA,MAAM,EAAE,CADM;AAEdD,IAAAA,KAAK,EAAE,MAFO;AAGda,IAAAA,YAAY,EAAE,GAHA;AAIdC,IAAAA,eAAe,EAAE;AAJH,GAhCe;AAsC/BC,EAAAA,iBAAiB,EAAE;AACjBd,IAAAA,MAAM,EAAE,CADS;AAEjBD,IAAAA,KAAK,EAAE,KAFU;AAGjBgB,IAAAA,mBAAmB,EAAE,GAHJ;AAIjBC,IAAAA,sBAAsB,EAAE,GAJP;AAKjBC,IAAAA,QAAQ,EAAE;AALO;AAtCY,CAAlB,CAAf",
+		"sourcesContent": [
+			"import {StyleSheet} from 'react-native';\n\nexport default StyleSheet.create({\n  contain: {\n    flexDirection: 'row',\n    width: '100%',\n    height: 85,\n  },\n  contentLeft: {\n    flex: 3.5,\n    justifyContent: 'center',\n    alignItems: 'center',\n  },\n  containRight: {\n    flex: 6.5,\n    justifyContent: 'center',\n    alignItems: 'flex-end',\n  },\n  starLeft: {\n    flex: 3.5,\n    justifyContent: 'center',\n    alignItems: 'flex-end',\n  },\n  lineStar: {\n    height: 10,\n    flexDirection: 'row',\n    alignItems: 'center',\n  },\n  containStatus: {flex: 6.5, justifyContent: 'center'},\n  contentLineStatus: {\n    height: 10,\n    justifyContent: 'center',\n    marginLeft: 10,\n  },\n  lineStatusGray: {\n    height: 3,\n    width: '100%',\n    borderRadius: 1.5,\n    backgroundColor: '#f1f1f1',\n  },\n  lineStatusPrimary: {\n    height: 3,\n    width: '10%',\n    borderTopLeftRadius: 1.5,\n    borderBottomLeftRadius: 1.5,\n    position: 'absolute',\n  },\n});\n"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

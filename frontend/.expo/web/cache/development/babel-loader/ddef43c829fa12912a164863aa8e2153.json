@@ -1,0 +1,40 @@
+{
+	"ast": null,
+	"code": "import StyleSheet from \"react-native-web/dist/exports/StyleSheet\";\nimport Dimensions from \"react-native-web/dist/exports/Dimensions\";\nexport default StyleSheet.create({\n  contain: {\n    padding: 20,\n    flex: 1,\n    top: 30\n  },\n  backButton: {\n    position: 'absolute',\n    top: -100,\n    left: 20,\n    backgroundColor: 'rgba(0,0,0,0.4)',\n    height: 35,\n    width: 35,\n    borderRadius: 20,\n    alignItems: 'center',\n    justifyContent: 'center'\n  },\n  buttonWrapper: {\n    zIndex: 3,\n    position: 'absolute',\n    top: Dimensions.get('window').height - 75,\n    left: 30,\n    right: 30\n  },\n  header: {\n    fontSize: 20\n  }\n});",
+	"map": {
+		"version": 3,
+		"sources": [
+			"/Users/llh/Documents/map/frontend/components/BackButton/styles.js"
+		],
+		"names": [
+			"StyleSheet",
+			"create",
+			"contain",
+			"padding",
+			"flex",
+			"top",
+			"backButton",
+			"position",
+			"left",
+			"backgroundColor",
+			"height",
+			"width",
+			"borderRadius",
+			"alignItems",
+			"justifyContent",
+			"buttonWrapper",
+			"zIndex",
+			"Dimensions",
+			"get",
+			"right",
+			"header",
+			"fontSize"
+		],
+		"mappings": ";;AAEA,eAAeA,UAAU,CAACC,MAAX,CAAkB;AAC/BC,EAAAA,OAAO,EAAE;AACPC,IAAAA,OAAO,EAAE,EADF;AAEPC,IAAAA,IAAI,EAAE,CAFC;AAGPC,IAAAA,GAAG,EAAE;AAHE,GADsB;AAM/BC,EAAAA,UAAU,EAAE;AACVC,IAAAA,QAAQ,EAAE,UADA;AAEVF,IAAAA,GAAG,EAAE,CAAC,GAFI;AAGVG,IAAAA,IAAI,EAAE,EAHI;AAIVC,IAAAA,eAAe,EAAE,iBAJP;AAKVC,IAAAA,MAAM,EAAC,EALG;AAMVC,IAAAA,KAAK,EAAE,EANG;AAOVC,IAAAA,YAAY,EAAE,EAPJ;AAQVC,IAAAA,UAAU,EAAE,QARF;AASVC,IAAAA,cAAc,EAAE;AATN,GANmB;AAiB7BC,EAAAA,aAAa,EAAE;AACbC,IAAAA,MAAM,EAAE,CADK;AAEbT,IAAAA,QAAQ,EAAE,UAFG;AAGbF,IAAAA,GAAG,EAAEY,UAAU,CAACC,GAAX,CAAe,QAAf,EAAyBR,MAAzB,GAAiC,EAHzB;AAIbF,IAAAA,IAAI,EAAE,EAJO;AAKbW,IAAAA,KAAK,EAAE;AALM,GAjBc;AAwB/BC,EAAAA,MAAM,EAAE;AACNC,IAAAA,QAAQ,EAAE;AADJ;AAxBuB,CAAlB,CAAf",
+		"sourcesContent": [
+			"import {StyleSheet, Dimensions} from 'react-native';\n\nexport default StyleSheet.create({\n  contain: {\n    padding: 20,\n    flex: 1,\n    top: 30,\n  },\n  backButton: {\n    position: 'absolute',\n    top: -100,\n    left: 20,\n    backgroundColor: 'rgba(0,0,0,0.4)',\n    height:35,\n    width: 35,\n    borderRadius: 20,\n    alignItems: 'center',\n    justifyContent: 'center'\n    },\n    buttonWrapper: {\n      zIndex: 3,\n      position: 'absolute',\n      top: Dimensions.get('window').height -75,\n      left: 30,\n      right: 30,\n  },\n  header: {\n    fontSize: 20,\n\n  },\n});\n"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

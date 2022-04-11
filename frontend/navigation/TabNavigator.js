@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 // import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet, View, Image, TouchableOpacity } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { View as Venue } from '../screens/home'
-import Map from '../screens/map/View copy'
+import Map from '../screens/map/View'
 import Report from '../screens/report-user/View'
 import Check from '../screens/check-user/View'
 import Trial from '../screens/report-staff-trial/App'
@@ -13,7 +13,7 @@ import Trial from '../screens/report-staff-trial/App'
 
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator()
 
 const TabNavigator = () => {
 	return (
@@ -37,58 +37,96 @@ const TabNavigator = () => {
 				tabBarActiveTintColor: '#007aff',
 				tabBarLabelStyle: { fontSize: 8, fontWeight: 'bold', top: 17 },
 				marginBottom: 10
-			}}>
-
-			<Tab.Screen name="VENUE" component={Venue} options={{
-				tabBarIcon: ({ color, size }) => (
-					<View style={styles.tabBar}>
-						<Ionicons name="md-home-sharp" color={color} size={size - 3} />
-					</View>
-				)
-			}}></Tab.Screen>
-
-			<Tab.Screen name="CHECK" component={Check}
+			}}
+		>
+			<Tab.Screen
+				name="VENUE"
+				component={Venue}
 				options={{
 					tabBarIcon: ({ color, size }) => (
 						<View style={styles.tabBar}>
-							<Ionicons name="qr-code-sharp" color={color} size={size - 3} style={{ right: 7 }} />
-						</View>),
-				}}></Tab.Screen>
+							<Ionicons name="md-home-sharp" color={color} size={size - 3} />
+						</View>
+					)
+				}}
+			></Tab.Screen>
 
-			<Tab.Screen name="MAP" component={Map} options={{
-				tabBarStyle: { display: "none" },
-				tabBarIcon:
-					() => (
+			<Tab.Screen
+				name="CHECK"
+				component={Check}
+				options={{
+					tabBarIcon: ({ color, size }) => (
+						<View style={styles.tabBar}>
+							<Ionicons
+								name="qr-code-sharp"
+								color={color}
+								size={size - 3}
+								style={{ right: 7 }}
+							/>
+						</View>
+					)
+				}}
+			></Tab.Screen>
+
+			<Tab.Screen
+				name="MAP"
+				component={Map}
+				options={{
+					tabBarStyle: { display: 'none' },
+					tabBarIcon: () => (
 						<Ionicons
-							name="md-map-sharp" color={'#ffffff'} size={25}
+							name="md-map-sharp"
+							color={'#ffffff'}
+							size={25}
 							resizeMode="contain"
 							style={{
 								width: 25,
 								height: 25,
 								justifyContent: 'center',
-								alignItems: 'center',
+								alignItems: 'center'
 							}}
 						/>
 					),
-				tabBarButton: props => <View style={styles.text}><TouchableOpacity {...props} /></View>
-			}}></Tab.Screen>
+					tabBarButton: (props) => (
+						<View style={styles.text}>
+							<TouchableOpacity {...props} />
+						</View>
+					)
+				}}
+			></Tab.Screen>
 
-			<Tab.Screen name="REPORT" component={Report} options={{
-				tabBarIcon: ({ color, size }) => (
-					<View style={styles.tabBar}>
-						<Ionicons name="md-chatbox-ellipses-sharp" color={color} size={size - 3} style={{ left: 7 }} />
-					</View>
-				)
-			}}></Tab.Screen>
+			<Tab.Screen
+				name="REPORT"
+				component={Report}
+				options={{
+					tabBarIcon: ({ color, size }) => (
+						<View style={styles.tabBar}>
+							<Ionicons
+								name="md-chatbox-ellipses-sharp"
+								color={color}
+								size={size - 3}
+								style={{ left: 7 }}
+							/>
+						</View>
+					)
+				}}
+			></Tab.Screen>
 
-			<Tab.Screen name="TRIAL" component={Trial} options={{
-				tabBarIcon: ({ color, size }) => (
-					<View style={styles.tabBar}>
-						<Ionicons name="md-settings-sharp" color={color} size={size - 3} />
-					</View>
-				)
-			}}></Tab.Screen>
-
+			<Tab.Screen
+				name="TRIAL"
+				component={Trial}
+				options={{
+					tabBarIcon: ({ color, size }) => (
+						<View style={styles.tabBar}>
+							<Ionicons
+								name="md-settings-sharp"
+								color={color}
+								size={size - 3}
+							/>
+						</View>
+					)
+				}}
+			></Tab.Screen>
 		</Tab.Navigator>
 		// </NavigationContainer>
 	)
@@ -106,12 +144,12 @@ const styles = StyleSheet.create({
 		elevation: 5
 	},
 	tabBar: {
-		top: 15,
+		top: 15
 	},
 	button: {
 		top: 0,
 		justifyContent: 'center',
-		alignItems: 'center',
+		alignItems: 'center'
 	},
 	text: {
 		top: -15,
@@ -131,4 +169,4 @@ const styles = StyleSheet.create({
 	}
 })
 
-export default TabNavigator;
+export default TabNavigator

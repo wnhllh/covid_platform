@@ -1,1 +1,15 @@
-{"ast":null,"code":"import { combineReducers } from 'redux';\nimport { reducer as venue } from \"../screens/view/venue\";\nimport { reducer as report } from \"../screens/report-staff-trial\";\nimport { reducer as list } from \"../screens/view/detail\";\nvar reducer = combineReducers({\n  venue: venue,\n  report: report,\n  list: list\n});\nexport default reducer;","map":{"version":3,"sources":["/Users/llh/Documents/map/frontend/store/reducer.js"],"names":["combineReducers","reducer","venue","report","list"],"mappings":"AAAA,SAASA,eAAT,QAAgC,OAAhC;AACA,SAASC,OAAO,IAAIC,KAApB;AACA,SAASD,OAAO,IAAIE,MAApB;AACA,SAASF,OAAO,IAAIG,IAApB;AAEA,IAAMH,OAAO,GAAGD,eAAe,CAAC;AAC5BE,EAAAA,KAAK,EAAEA,KADqB;AAE5BC,EAAAA,MAAM,EAAEA,MAFoB;AAG5BC,EAAAA,IAAI,EAAEA;AAHsB,CAAD,CAA/B;AAMA,eAAeH,OAAf","sourcesContent":["import { combineReducers } from 'redux';\nimport { reducer as venue } from '../screens/view/venue';\nimport { reducer as report } from '../screens/report-staff-trial';\nimport { reducer as list } from '../screens/view/detail';\n\nconst reducer = combineReducers({\n    venue: venue,\n    report: report,\n    list: list\n})\n\nexport default reducer;"]},"metadata":{},"sourceType":"module"}
+{
+	"ast": null,
+	"code": "import { combineReducers } from 'redux';\nimport { reducer as venue } from \"../screens/view/venue\";\nimport { reducer as report } from \"../screens/report-staff-trial\";\nimport { reducer as list } from \"../screens/view/detail\";\nvar reducer = combineReducers({\n  venue: venue,\n  report: report,\n  list: list\n});\nexport default reducer;",
+	"map": {
+		"version": 3,
+		"sources": ["/Users/llh/Documents/map/frontend/store/reducer.js"],
+		"names": ["combineReducers", "reducer", "venue", "report", "list"],
+		"mappings": "AAAA,SAASA,eAAT,QAAgC,OAAhC;AACA,SAASC,OAAO,IAAIC,KAApB;AACA,SAASD,OAAO,IAAIE,MAApB;AACA,SAASF,OAAO,IAAIG,IAApB;AAEA,IAAMH,OAAO,GAAGD,eAAe,CAAC;AAC5BE,EAAAA,KAAK,EAAEA,KADqB;AAE5BC,EAAAA,MAAM,EAAEA,MAFoB;AAG5BC,EAAAA,IAAI,EAAEA;AAHsB,CAAD,CAA/B;AAMA,eAAeH,OAAf",
+		"sourcesContent": [
+			"import { combineReducers } from 'redux';\nimport { reducer as venue } from '../screens/view/venue';\nimport { reducer as report } from '../screens/report-staff-trial';\nimport { reducer as list } from '../screens/view/detail';\n\nconst reducer = combineReducers({\n    venue: venue,\n    report: report,\n    list: list\n})\n\nexport default reducer;"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

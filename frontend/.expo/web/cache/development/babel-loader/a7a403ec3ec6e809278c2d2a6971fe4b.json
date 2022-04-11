@@ -1,1 +1,31 @@
-{"ast":null,"code":"import { connect } from 'react-redux';\nimport { getSetTabAction, getVenueInfo } from \"./actionCreator\";\nimport Venue from \"./UI\";\n\nvar mapState = function mapState(state) {\n  return {\n    categories: state.venue.categories,\n    tab: state.venue.tab\n  };\n};\n\nvar mapDispatch = function mapDispatch(dispatch) {\n  return {\n    getVenuesInfo: function getVenuesInfo() {\n      dispatch(getVenueInfo());\n    },\n    setTab: function setTab(res) {\n      var action = getSetTabAction(res);\n      dispatch(action);\n    }\n  };\n};\n\nexport default connect(mapState, mapDispatch)(Venue);","map":{"version":3,"sources":["/Users/llh/Documents/map/frontend/screens/view/venue/View.js"],"names":["connect","getSetTabAction","getVenueInfo","Venue","mapState","state","categories","venue","tab","mapDispatch","dispatch","getVenuesInfo","setTab","res","action"],"mappings":"AAAA,SAASA,OAAT,QAAwB,aAAxB;AACA,SAASC,eAAT,EAA0BC,YAA1B;AAEA,OAAOC,KAAP;;AAEA,IAAMC,QAAQ,GAAG,SAAXA,QAAW,CAACC,KAAD,EAAW;AAC1B,SAAO;AACLC,IAAAA,UAAU,EAAED,KAAK,CAACE,KAAN,CAAYD,UADnB;AAELE,IAAAA,GAAG,EAAEH,KAAK,CAACE,KAAN,CAAYC;AAFZ,GAAP;AAID,CALD;;AAOA,IAAMC,WAAW,GAAG,SAAdA,WAAc,CAACC,QAAD,EAAc;AAC9B,SAAO;AACLC,IAAAA,aADK,2BACW;AACdD,MAAAA,QAAQ,CAACR,YAAY,EAAb,CAAR;AACD,KAHI;AAILU,IAAAA,MAJK,kBAIEC,GAJF,EAIO;AACV,UAAMC,MAAM,GAAGb,eAAe,CAACY,GAAD,CAA9B;AACAH,MAAAA,QAAQ,CAACI,MAAD,CAAR;AACD;AAPI,GAAP;AASH,CAVD;;AAYA,eAAed,OAAO,CAACI,QAAD,EAAWK,WAAX,CAAP,CAA+BN,KAA/B,CAAf","sourcesContent":["import { connect } from 'react-redux'\nimport { getSetTabAction, getVenueInfo } from './actionCreator'\n\nimport Venue from './UI'\n\nconst mapState = (state) => {\n  return {\n    categories: state.venue.categories,\n    tab: state.venue.tab,\n  }\n}\n\nconst mapDispatch = (dispatch) => {\n    return {\n      getVenuesInfo() {\n        dispatch(getVenueInfo())\n      },\n      setTab(res) {\n        const action = getSetTabAction(res);\n        dispatch(action)\n      }\n    }\n}\n\nexport default connect(mapState, mapDispatch)(Venue)"]},"metadata":{},"sourceType":"module"}
+{
+	"ast": null,
+	"code": "import { connect } from 'react-redux';\nimport { getSetTabAction, getVenueInfo } from \"./actionCreator\";\nimport Venue from \"./UI\";\n\nvar mapState = function mapState(state) {\n  return {\n    categories: state.venue.categories,\n    tab: state.venue.tab\n  };\n};\n\nvar mapDispatch = function mapDispatch(dispatch) {\n  return {\n    getVenuesInfo: function getVenuesInfo() {\n      dispatch(getVenueInfo());\n    },\n    setTab: function setTab(res) {\n      var action = getSetTabAction(res);\n      dispatch(action);\n    }\n  };\n};\n\nexport default connect(mapState, mapDispatch)(Venue);",
+	"map": {
+		"version": 3,
+		"sources": ["/Users/llh/Documents/map/frontend/screens/view/venue/View.js"],
+		"names": [
+			"connect",
+			"getSetTabAction",
+			"getVenueInfo",
+			"Venue",
+			"mapState",
+			"state",
+			"categories",
+			"venue",
+			"tab",
+			"mapDispatch",
+			"dispatch",
+			"getVenuesInfo",
+			"setTab",
+			"res",
+			"action"
+		],
+		"mappings": "AAAA,SAASA,OAAT,QAAwB,aAAxB;AACA,SAASC,eAAT,EAA0BC,YAA1B;AAEA,OAAOC,KAAP;;AAEA,IAAMC,QAAQ,GAAG,SAAXA,QAAW,CAACC,KAAD,EAAW;AAC1B,SAAO;AACLC,IAAAA,UAAU,EAAED,KAAK,CAACE,KAAN,CAAYD,UADnB;AAELE,IAAAA,GAAG,EAAEH,KAAK,CAACE,KAAN,CAAYC;AAFZ,GAAP;AAID,CALD;;AAOA,IAAMC,WAAW,GAAG,SAAdA,WAAc,CAACC,QAAD,EAAc;AAC9B,SAAO;AACLC,IAAAA,aADK,2BACW;AACdD,MAAAA,QAAQ,CAACR,YAAY,EAAb,CAAR;AACD,KAHI;AAILU,IAAAA,MAJK,kBAIEC,GAJF,EAIO;AACV,UAAMC,MAAM,GAAGb,eAAe,CAACY,GAAD,CAA9B;AACAH,MAAAA,QAAQ,CAACI,MAAD,CAAR;AACD;AAPI,GAAP;AASH,CAVD;;AAYA,eAAed,OAAO,CAACI,QAAD,EAAWK,WAAX,CAAP,CAA+BN,KAA/B,CAAf",
+		"sourcesContent": [
+			"import { connect } from 'react-redux'\nimport { getSetTabAction, getVenueInfo } from './actionCreator'\n\nimport Venue from './UI'\n\nconst mapState = (state) => {\n  return {\n    categories: state.venue.categories,\n    tab: state.venue.tab,\n  }\n}\n\nconst mapDispatch = (dispatch) => {\n    return {\n      getVenuesInfo() {\n        dispatch(getVenueInfo())\n      },\n      setTab(res) {\n        const action = getSetTabAction(res);\n        dispatch(action)\n      }\n    }\n}\n\nexport default connect(mapState, mapDispatch)(Venue)"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

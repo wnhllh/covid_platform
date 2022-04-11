@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
-from models import db, Review
-from schemas import review_schema, reviews_schema
+from models.review import db, Review
+from schemas.review import review_schema, reviews_schema
 
 
 blue = Blueprint('review', __name__)

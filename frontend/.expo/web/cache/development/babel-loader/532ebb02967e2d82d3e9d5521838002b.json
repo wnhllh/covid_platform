@@ -1,0 +1,31 @@
+{
+	"ast": null,
+	"code": "import _toConsumableArray from \"@babel/runtime/helpers/toConsumableArray\";\nimport { SET_CATEGORIES, SET_TAB } from \"./actionType\";\nvar defaultState = {\n  categories: [],\n  tab: 1\n};\nexport default function reducer() {\n  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;\n  var action = arguments.length > 1 ? arguments[1] : undefined;\n\n  if (action.type === SET_CATEGORIES) {\n    var newState = {\n      categories: _toConsumableArray(action.data),\n      tab: state.tab\n    };\n    return newState;\n  }\n\n  if (action.type === SET_TAB) {\n    console.log(action.data);\n    var _newState = {\n      categories: _toConsumableArray(state.categories),\n      tab: action.data\n    };\n    return _newState;\n  }\n\n  return state;\n}",
+	"map": {
+		"version": 3,
+		"sources": [
+			"/Users/llh/Documents/map/frontend/screens/view/venue/reducer.js"
+		],
+		"names": [
+			"SET_CATEGORIES",
+			"SET_TAB",
+			"defaultState",
+			"categories",
+			"tab",
+			"reducer",
+			"state",
+			"action",
+			"type",
+			"newState",
+			"data",
+			"console",
+			"log"
+		],
+		"mappings": ";AAAA,SAASA,cAAT,EAAyBC,OAAzB;AAEA,IAAMC,YAAY,GAAG;AACpBC,EAAAA,UAAU,EAAE,EADQ;AAEpBC,EAAAA,GAAG,EAAE;AAFe,CAArB;AAKA,eAAe,SAASC,OAAT,GAA+C;AAAA,MAA9BC,KAA8B,uEAAtBJ,YAAsB;AAAA,MAARK,MAAQ;;AAC7D,MAAIA,MAAM,CAACC,IAAP,KAAgBR,cAApB,EAAoC;AAEnC,QAAMS,QAAQ,GAAG;AAChBN,MAAAA,UAAU,qBAAMI,MAAM,CAACG,IAAb,CADM;AAEhBN,MAAAA,GAAG,EAAEE,KAAK,CAACF;AAFK,KAAjB;AAIA,WAAOK,QAAP;AACA;;AACD,MAAIF,MAAM,CAACC,IAAP,KAAgBP,OAApB,EAA6B;AAC5BU,IAAAA,OAAO,CAACC,GAAR,CAAYL,MAAM,CAACG,IAAnB;AACA,QAAMD,SAAQ,GAAG;AAChBN,MAAAA,UAAU,qBAAMG,KAAK,CAACH,UAAZ,CADM;AAEhBC,MAAAA,GAAG,EAAEG,MAAM,CAACG;AAFI,KAAjB;AAIA,WAAOD,SAAP;AACA;;AACD,SAAOH,KAAP;AACA",
+		"sourcesContent": [
+			"import { SET_CATEGORIES, SET_TAB } from './actionType';\n\nconst defaultState = {\n\tcategories: [],\n\ttab: 1,\n}\n\nexport default function reducer(state = defaultState, action) {\n\tif (action.type === SET_CATEGORIES) {\n\t\t// console.log([...action.data])\n\t\tconst newState = {\n\t\t\tcategories: [...action.data],\n\t\t\ttab: state.tab,\n\t\t}\n\t\treturn newState\n\t}\n\tif (action.type === SET_TAB) {\n\t\tconsole.log(action.data)\n\t\tconst newState = {\n\t\t\tcategories: [...state.categories],\n\t\t\ttab: action.data,\n\t\t}\n\t\treturn newState\n\t}\n\treturn state;\n}"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

@@ -1,0 +1,17 @@
+{
+	"ast": null,
+	"code": "var baseUrl = 'http://127.0.0.1:5000';\nexport default baseUrl;",
+	"map": {
+		"version": 3,
+		"sources": [
+			"/Users/llh/Documents/map/frontend/assets/constants/BaseUrl.js"
+		],
+		"names": ["baseUrl"],
+		"mappings": "AAAA,IAAMA,OAAO,GAAG,uBAAhB;AAIA,eAAeA,OAAf",
+		"sourcesContent": [
+			"const baseUrl = 'http://127.0.0.1:5000';\n// const baseUrl = 'http://18.221.189.134:5000';\n\n\nexport default baseUrl;"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

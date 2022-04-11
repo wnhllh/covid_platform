@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from models import db, Venue
-from schemas import venue_schema, venues_schema
+from models.venue import db, Venue
+from schemas.venue import venue_schema, venues_schema
 
 
 blue = Blueprint('venue', __name__)

@@ -1,40 +1,81 @@
-import React, { useState, useEffect } from "react";
-import { Image, ScrollView, StyleSheet, Text, TextInput, SafeAreaView, View, FlatList } from "react-native";
+import React, { useState, useEffect } from 'react'
+import {
+	Image,
+	ScrollView,
+	StyleSheet,
+	Text,
+	TextInput,
+	SafeAreaView,
+	View,
+	FlatList
+} from 'react-native'
 
-import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete'
 
-import { connect } from 'react-redux';
-import axios from 'axios';
+import { connect } from 'react-redux'
+import axios from 'axios'
 import baseUrl from '../../assets/constants/BaseUrl'
 
-import Button from "../../components/Button";
+import Button from '../../components/Button'
 
-const imageUrl = 'https://expouploads22309-dev.s3.us-east-2.amazonaws.com/public/'
+const imageUrl =
+	'https://expouploads22309-dev.s3.us-east-2.amazonaws.com/public/'
 
 Create = (props) => {
-	var a = [];
-	for(var n = 0; n < props.venues[props.venues.length - 1].image_num; n++) a[n] = 0
+	const a = []
+	if (props.venues.length > 0) {
+		for (let n = 0; n < props.venues[props.venues.length - 1].image_num; n++) {
+			a[n] = 0
+		}
+	} else {
+	}
 
 	// console.log(props.venues[props.venues.length - 1].id )
 
 	const handleSubmit = async () => {
-		props.createVenues(props.name, props.description, props.latitude, props.longitude, 0)
+		props.createVenues(
+			props.name,
+			props.description,
+			props.latitude,
+			props.longitude,
+			0
+		)
 	}
 
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
 			<TextInput
 				placeholder=" Name"
-				onChangeText={(text) => { props.setName(text) }}
-				style={{ borderWidth: 2, borderColor: '#000', padding: 10, marginTop: 10 }}
+				onChangeText={(text) => {
+					props.setName(text)
+				}}
+				style={{
+					borderWidth: 2,
+					borderColor: '#000',
+					padding: 10,
+					marginTop: 10
+				}}
 			/>
 			<TextInput
 				placeholder=" Description"
-				onChangeText={(text) => { props.setDescription(text) }}
-				style={{ borderWidth: 2, borderColor: '#000', padding: 10, marginTop: 10 }}
+				onChangeText={(text) => {
+					props.setDescription(text)
+				}}
+				style={{
+					borderWidth: 2,
+					borderColor: '#000',
+					padding: 10,
+					marginTop: 10
+				}}
 			/>
-			<Button text={props.venues[props.venues.length - 1].id} navigation={() => { handleSubmit() }} />
-			
+			<Button
+				// text={props.venues[props.venues.length - 1].id}
+				text={'Submit'}
+				navigation={() => {
+					handleSubmit()
+				}}
+			/>
+
 			<View style={[styles.searchBox, { zIndex: 2 }]}>
 				<GooglePlacesAutocomplete
 					placeholder="Search"
@@ -43,23 +84,23 @@ Create = (props) => {
 					returnKeyType={'search'} // Can be left out for default return key https://facebook.github.io/react-native/docs/textinput.html#returnkeytype
 					listViewDisplayed="auto" // true/false/undefined
 					fetchDetails={true}
-					renderDescription={row => row.description} // custom description render
+					renderDescription={(row) => row.description} // custom description render
 					onPress={(data, details = null) => {
 						// console.log('data', data);
-						console.log('latitude', details.geometry.location.lat);
-						console.log('longitude', details.geometry.location.lng);
+						console.log('latitude', details.geometry.location.lat)
+						console.log('longitude', details.geometry.location.lng)
 						props.setCoords(details.geometry.location)
 					}}
 					getDefaultValue={() => {
-						return '';
+						return ''
 					}}
 					query={{
 						key: 'AIzaSyCANhUvc31mdriYGIh4oLF4G5diQiXokQg',
-						language: 'en',
+						language: 'en'
 					}}
 					styles={{
 						textInputContainer: {
-							height: 45,
+							height: 45
 						},
 						textInput: {
 							backgroundColor: '#ffffff',
@@ -68,63 +109,96 @@ Create = (props) => {
 							paddingVertical: 5,
 							paddingHorizontal: 10,
 							fontSize: 15,
-							flex: 1,
-						},
+							flex: 1
+						}
 					}}
 					currentLocationLabel="Current location"
 					nearbyPlacesAPI="GooglePlacesSearch"
-					GoogleReverseGeocodingQuery={{
-					}}
+					GoogleReverseGeocodingQuery={{}}
 					GooglePlacesSearchQuery={{
-						rankby: 'distance',
+						rankby: 'distance'
 					}}
 					debounce={200}
 				/>
 			</View>
 
 			<ScrollView
-          horizontal
-          scrollEventThrottle={16}
-          style={{ marginHorizontal: 20, marginTop:20, marginBottom:10 }}
-        >
-          {a.map((marker, index) => {
-            return (
-              <View key={index} style={{width: 100, height: 100, borderRadius: 10, overflow: "hidden", marginRight:15}}>
-              <Image
-                source={{uri :'https://expouploads22309-dev.s3.us-east-2.amazonaws.com/public/venue/' + props.venues[props.venues.length - 1].id + '/' + (index + 1) + '.jpg'}}
-                style={{height: 100, width:100}}
-                resizeMode="cover"
-              />
-              </View>
-            );
-          })}
-        </ScrollView>
+				horizontal
+				scrollEventThrottle={16}
+				style={{ marginHorizontal: 20, marginTop: 20, marginBottom: 10 }}
+			>
+				{a.map((marker, index) => {
+					return (
+						<View
+							key={index}
+							style={{
+								width: 100,
+								height: 100,
+								borderRadius: 10,
+								overflow: 'hidden',
+								marginRight: 15
+							}}
+						>
+							<Image
+								source={{
+									uri:
+										'https://expouploads22309-dev.s3.us-east-2.amazonaws.com/public/venue/' +
+										props.venues[props.venues.length - 1].id +
+										'/' +
+										(index + 1) +
+										'.jpg'
+								}}
+								style={{ height: 100, width: 100 }}
+								resizeMode="cover"
+							/>
+						</View>
+					)
+				})}
+			</ScrollView>
 
 			<View style={[styles.buttonWrapper]}>
-				<Button text={"Upload Image"} navigation={() => { props.navigation.navigate('Upload', { id: props.venues[props.venues.length - 1].id, num: props.venues[props.venues.length - 1].image_num, name: 'venue/' + props.venues[props.venues.length - 1].id + '/' + (props.venues[props.venues.length - 1].image_num + 1) })}} />
+				<Button
+					text={'Upload Image'}
+					navigation={() => {
+						props.navigation.navigate('Upload', {
+							id: props.venues[props.venues.length - 1].id,
+							num: props.venues[props.venues.length - 1].image_num,
+							name:
+								'venue/' +
+								props.venues[props.venues.length - 1].id +
+								'/' +
+								(props.venues[props.venues.length - 1].image_num + 1)
+						})
+					}}
+				/>
 			</View>
 		</SafeAreaView>
-	);
+	)
 }
 
-const createVenue = (name, description, lat, lng, num) => async dispatch => {
-	const res = await axios.post(`${baseUrl}/venue/add`, { name: name, description: description, latitude: lat, longitude: lng, image_num: num })
-};
-
+const createVenue = (name, description, lat, lng, num) => async (dispatch) => {
+	const res = await axios.post(`${baseUrl}/venue/add`, {
+		name: name,
+		description: description,
+		latitude: lat,
+		longitude: lng,
+		image_num: num
+	})
+}
 
 const getSetName = (data) => {
 	return {
 		type: 'CREATE_NAME',
 		name: data
 	}
-};
+}
 
 const getSetDescription = (data) => {
 	return {
 		type: 'CREATE_DESCRIPTION',
 		description: data
 	}
-};
+}
 
 const getSetCoords = (data) => {
 	return {
@@ -132,23 +206,22 @@ const getSetCoords = (data) => {
 		longitude: data.lng,
 		latitude: data.lat
 	}
-};
+}
 
 const getSetVenue = (data) => {
 	return {
 		type: 'CREATE_IMAGE',
 		venue: data.data
 	}
-};
+}
 
-const getVenueByID = (id) => async dispatch => {
+const getVenueByID = (id) => async (dispatch) => {
 	const res = await axios.get(`${baseUrl}/venue/get/${id}`)
 	if (res) {
 		const action = getSetVenue(res)
 		dispatch(action)
 	}
-};
-
+}
 
 const mapState = (state) => {
 	// console.log(state.report.name)
@@ -161,36 +234,36 @@ const mapState = (state) => {
 		name: state.report.name,
 		description: state.report.description,
 		longitude: state.report.longitude,
-		latitude: state.report.latitude,
+		latitude: state.report.latitude
 	}
 }
 
 const mapDispatch = (dispatch) => {
 	return {
-		createVenues(name, description, lat, lng, num) {
+		createVenues (name, description, lat, lng, num) {
 			dispatch(createVenue(name, description, lat, lng, num))
 		},
-		setName(res) {
+		setName (res) {
 			if (res) {
 				const action = getSetName(res)
 				dispatch(action)
 			}
 		},
-		setDescription(res) {
+		setDescription (res) {
 			if (res) {
 				const action = getSetDescription(res)
 				dispatch(action)
 			}
 		},
-		setCoords(res) {
+		setCoords (res) {
 			if (res) {
 				const action = getSetCoords(res)
 				dispatch(action)
 			}
 		},
-		getVenuesByID(id) {
+		getVenuesByID (id) {
 			dispatch(getVenueByID(id))
-		},
+		}
 	}
 }
 
@@ -199,8 +272,7 @@ export default connect(mapState, mapDispatch)(Create)
 const styles = StyleSheet.create({
 	buttonWrapper: {
 		position: 'absolute',
-		marginTop: 400,
-
+		marginTop: 400
 	},
 	container: {
 		display: 'flex',
@@ -213,7 +285,7 @@ const styles = StyleSheet.create({
 		paddingRight: 20,
 		justifyContent: 'center',
 		alignContent: 'center',
-		flexDirection: "row",
+		flexDirection: 'row',
 		backgroundColor: '#fff',
 		width: '90%',
 		alignSelf: 'center',
@@ -222,6 +294,6 @@ const styles = StyleSheet.create({
 		shadowOffset: { width: 0, height: 3 },
 		shadowOpacity: 0.5,
 		shadowRadius: 5,
-		elevation: 10,
-	},
-});
+		elevation: 10
+	}
+})

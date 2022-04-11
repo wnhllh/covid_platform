@@ -1,1 +1,17 @@
-{"ast":null,"code":"import MaterialIcons from \"./build/MaterialIcons\";\nexport default MaterialIcons;","map":{"version":3,"sources":["/Users/llh/Documents/map/frontend/node_modules/@expo/vector-icons/MaterialIcons.js"],"names":["MaterialIcons"],"mappings":"AAAA,OAAOA,aAAP;AACA,eAAeA,aAAf","sourcesContent":["import MaterialIcons from './build/MaterialIcons';\nexport default MaterialIcons;\n"]},"metadata":{},"sourceType":"module"}
+{
+	"ast": null,
+	"code": "import MaterialIcons from \"./build/MaterialIcons\";\nexport default MaterialIcons;",
+	"map": {
+		"version": 3,
+		"sources": [
+			"/Users/llh/Documents/map/frontend/node_modules/@expo/vector-icons/MaterialIcons.js"
+		],
+		"names": ["MaterialIcons"],
+		"mappings": "AAAA,OAAOA,aAAP;AACA,eAAeA,aAAf",
+		"sourcesContent": [
+			"import MaterialIcons from './build/MaterialIcons';\nexport default MaterialIcons;\n"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

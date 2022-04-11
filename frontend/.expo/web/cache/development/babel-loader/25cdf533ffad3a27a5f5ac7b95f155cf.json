@@ -1,0 +1,30 @@
+{
+	"ast": null,
+	"code": "import * as React from 'react';\nimport { NavigationContainer } from '@react-navigation/native';\nimport { createNativeStackNavigator } from '@react-navigation/native-stack';\nimport Start from \"../screens/start/View\";\nimport List from \"../screens/view/detail/View\";\nimport Detail from \"../screens/checkin/View\";\nimport Form from \"../screens/form/View\";\nimport Uploader from \"../screens/view/upload/View\";\nimport Home from \"./TabNavigator\";\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nimport { jsxs as _jsxs } from \"react/jsx-runtime\";\nvar Stack = createNativeStackNavigator();\n\nfunction RouteApp() {\n  return _jsx(NavigationContainer, {\n    children: _jsxs(Stack.Navigator, {\n      initialRouteName: \"Start\",\n      children: [_jsx(Stack.Screen, {\n        name: \"Start\",\n        component: Start,\n        options: {\n          headerShown: false\n        }\n      }), _jsx(Stack.Screen, {\n        name: \"Home\",\n        component: Home,\n        options: {\n          headerShown: false\n        }\n      }), _jsx(Stack.Screen, {\n        name: \"List\",\n        component: List,\n        options: {\n          headerShown: false\n        }\n      }), _jsx(Stack.Screen, {\n        name: \"Detail\",\n        component: Detail,\n        options: {\n          headerShown: false\n        }\n      }), _jsx(Stack.Screen, {\n        name: \"Form\",\n        component: Form,\n        options: {\n          headerShown: false\n        }\n      }), _jsx(Stack.Screen, {\n        name: \"Uploader\",\n        component: Uploader,\n        options: {\n          headerShown: false\n        }\n      })]\n    })\n  });\n}\n\nexport default RouteApp;",
+	"map": {
+		"version": 3,
+		"sources": [
+			"/Users/llh/Documents/map/frontend/navigation/StackNavigator.js"
+		],
+		"names": [
+			"React",
+			"NavigationContainer",
+			"createNativeStackNavigator",
+			"Start",
+			"List",
+			"Detail",
+			"Form",
+			"Uploader",
+			"Home",
+			"Stack",
+			"RouteApp",
+			"headerShown"
+		],
+		"mappings": "AAAA,OAAO,KAAKA,KAAZ,MAAuB,OAAvB;AACA,SAASC,mBAAT,QAAoC,0BAApC;AACA,SAASC,0BAAT,QAA2C,gCAA3C;AAEA,OAAOC,KAAP;AACA,OAAOC,IAAP;AACA,OAAOC,MAAP;AACA,OAAOC,IAAP;AACA,OAAOC,QAAP;AACA,OAAOC,IAAP;;;AAEA,IAAMC,KAAK,GAAGP,0BAA0B,EAAxC;;AAEA,SAASQ,QAAT,GAAoB;AAClB,SACE,KAAC,mBAAD;AAAA,cACE,MAAC,KAAD,CAAO,SAAP;AACE,MAAA,gBAAgB,EAAC,OADnB;AAAA,iBAGE,KAAC,KAAD,CAAO,MAAP;AAAc,QAAA,IAAI,EAAC,OAAnB;AAA2B,QAAA,SAAS,EAAEP,KAAtC;AAA6C,QAAA,OAAO,EAAE;AAAEQ,UAAAA,WAAW,EAAE;AAAf;AAAtD,QAHF,EAIE,KAAC,KAAD,CAAO,MAAP;AAAc,QAAA,IAAI,EAAC,MAAnB;AAA0B,QAAA,SAAS,EAAEH,IAArC;AAA2C,QAAA,OAAO,EAAE;AAAEG,UAAAA,WAAW,EAAE;AAAf;AAApD,QAJF,EAKE,KAAC,KAAD,CAAO,MAAP;AAAc,QAAA,IAAI,EAAC,MAAnB;AAA0B,QAAA,SAAS,EAAEP,IAArC;AAA2C,QAAA,OAAO,EAAE;AAAEO,UAAAA,WAAW,EAAE;AAAf;AAApD,QALF,EAME,KAAC,KAAD,CAAO,MAAP;AAAc,QAAA,IAAI,EAAC,QAAnB;AAA4B,QAAA,SAAS,EAAEN,MAAvC;AAA+C,QAAA,OAAO,EAAE;AAAEM,UAAAA,WAAW,EAAE;AAAf;AAAxD,QANF,EAOE,KAAC,KAAD,CAAO,MAAP;AAAc,QAAA,IAAI,EAAC,MAAnB;AAA0B,QAAA,SAAS,EAAEL,IAArC;AAA2C,QAAA,OAAO,EAAE;AAAEK,UAAAA,WAAW,EAAE;AAAf;AAApD,QAPF,EAQE,KAAC,KAAD,CAAO,MAAP;AAAc,QAAA,IAAI,EAAC,UAAnB;AAA8B,QAAA,SAAS,EAAEJ,QAAzC;AAAmD,QAAA,OAAO,EAAE;AAAEI,UAAAA,WAAW,EAAE;AAAf;AAA5D,QARF;AAAA;AADF,IADF;AAcD;;AAED,eAAeD,QAAf",
+		"sourcesContent": [
+			"import * as React from 'react';\nimport { NavigationContainer } from '@react-navigation/native';\nimport { createNativeStackNavigator } from '@react-navigation/native-stack';\n\nimport Start from '../screens/start/View'\nimport List from '../screens/view/detail/View'\nimport Detail from '../screens/checkin/View'\nimport Form from '../screens/form/View'\nimport Uploader from '../screens/view/upload/View'\nimport Home from './TabNavigator'\n\nconst Stack = createNativeStackNavigator();\n\nfunction RouteApp() {\n  return (\n    <NavigationContainer>\n      <Stack.Navigator\n        initialRouteName=\"Start\"\n      >\n        <Stack.Screen name=\"Start\" component={Start} options={{ headerShown: false }} />\n        <Stack.Screen name=\"Home\" component={Home} options={{ headerShown: false }} />\n        <Stack.Screen name=\"List\" component={List} options={{ headerShown: false }} />\n        <Stack.Screen name=\"Detail\" component={Detail} options={{ headerShown: false }} />\n        <Stack.Screen name=\"Form\" component={Form} options={{ headerShown: false }} />\n        <Stack.Screen name=\"Uploader\" component={Uploader} options={{ headerShown: false }} />\n      </Stack.Navigator>\n    </NavigationContainer>\n  );\n}\n\nexport default RouteApp;"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

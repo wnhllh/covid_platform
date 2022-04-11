@@ -8,7 +8,7 @@ const defaultState = {
 	venue: {}
 }
 
-export default function reducer(state = defaultState, action) {
+export default function reducer (state = defaultState, action) {
 	if (action.type === 'SET_STATE') {
 		// console.log([...action.venues])
 		const newState = {
@@ -86,5 +86,5 @@ export default function reducer(state = defaultState, action) {
 		}
 		return newState
 	}
-	return state;
+	return state
 }

@@ -1,16 +1,16 @@
-import { SET_CATEGORIES, SET_TAB } from './actionType';
+import { SET_CATEGORIES, SET_TAB } from './actionType'
 
 const defaultState = {
 	categories: [],
-	tab: 1,
+	tab: 1
 }
 
-export default function reducer(state = defaultState, action) {
+export default function reducer (state = defaultState, action) {
 	if (action.type === SET_CATEGORIES) {
 		// console.log([...action.data])
 		const newState = {
 			categories: [...action.data],
-			tab: state.tab,
+			tab: state.tab
 		}
 		return newState
 	}
@@ -18,9 +18,9 @@ export default function reducer(state = defaultState, action) {
 		console.log(action.data)
 		const newState = {
 			categories: [...state.categories],
-			tab: action.data,
+			tab: action.data
 		}
 		return newState
 	}
-	return state;
+	return state
 }

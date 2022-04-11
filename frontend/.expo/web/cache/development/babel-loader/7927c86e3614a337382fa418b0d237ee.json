@@ -1,0 +1,54 @@
+{
+	"ast": null,
+	"code": "import _regeneratorRuntime from \"@babel/runtime/regenerator\";\nimport React from \"react\";\nimport Image from \"react-native-web/dist/exports/Image\";\nimport StyleSheet from \"react-native-web/dist/exports/StyleSheet\";\nimport Text from \"react-native-web/dist/exports/Text\";\nimport TextInput from \"react-native-web/dist/exports/TextInput\";\nimport Button from \"react-native-web/dist/exports/Button\";\nimport View from \"react-native-web/dist/exports/View\";\nimport FlatList from \"react-native-web/dist/exports/FlatList\";\nimport { connect } from \"react-redux\";\nimport axios from 'axios';\nimport baseUrl from \"../../assets/constants/BaseUrl\";\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nimport { jsxs as _jsxs } from \"react/jsx-runtime\";\n\nEdit = function Edit(props) {\n  var handleSubmit = function handleSubmit() {\n    return _regeneratorRuntime.async(function handleSubmit$(_context) {\n      while (1) {\n        switch (_context.prev = _context.next) {\n          case 0:\n            props.editVenues(props.route.params.data.item.id, props.name, props.description);\n\n          case 1:\n          case \"end\":\n            return _context.stop();\n        }\n      }\n    }, null, null, null, Promise);\n  };\n\n  return _jsxs(View, {\n    children: [_jsx(TextInput, {\n      placeholder: props.route.params.data.item.name,\n      onChangeText: function onChangeText(text) {\n        props.setName(text);\n      },\n      style: {\n        borderWidth: 2,\n        borderColor: '#000',\n        padding: 10,\n        marginTop: 10\n      }\n    }), _jsx(TextInput, {\n      placeholder: props.route.params.data.item.description,\n      onChangeText: function onChangeText(text) {\n        props.setDescription(text);\n      },\n      style: {\n        borderWidth: 2,\n        borderColor: '#000',\n        padding: 10,\n        marginTop: 10\n      }\n    }), _jsx(Button, {\n      title: \"submit\",\n      onPress: function onPress() {\n        handleSubmit();\n      }\n    })]\n  });\n};\n\nvar editVenue = function editVenue(id, name, description) {\n  return function _callee(dispatch) {\n    var res;\n    return _regeneratorRuntime.async(function _callee$(_context2) {\n      while (1) {\n        switch (_context2.prev = _context2.next) {\n          case 0:\n            _context2.next = 2;\n            return _regeneratorRuntime.awrap(axios.put(baseUrl + \"/venue/update/\" + id, {\n              name: name,\n              description: description\n            }));\n\n          case 2:\n            res = _context2.sent;\n\n          case 3:\n          case \"end\":\n            return _context2.stop();\n        }\n      }\n    }, null, null, null, Promise);\n  };\n};\n\nvar getSetName = function getSetName(data) {\n  return {\n    type: 'CREATE_NAME',\n    name: data\n  };\n};\n\nvar getSetDescription = function getSetDescription(data) {\n  return {\n    type: 'CREATE_DESCRIPTION',\n    description: data\n  };\n};\n\nvar mapState = function mapState(state) {\n  console.log(state.report.name);\n  console.log(state.report.description);\n  return {\n    name: state.report.name,\n    description: state.report.description\n  };\n};\n\nvar mapDispatch = function mapDispatch(dispatch) {\n  return {\n    editVenues: function editVenues(id, name, description) {\n      dispatch(editVenue(id, name, description));\n    },\n    setName: function setName(res) {\n      if (res) {\n        var action = getSetName(res);\n        dispatch(action);\n      }\n    },\n    setDescription: function setDescription(res) {\n      if (res) {\n        var action = getSetDescription(res);\n        dispatch(action);\n      }\n    }\n  };\n};\n\nexport default connect(mapState, mapDispatch)(Edit);",
+	"map": {
+		"version": 3,
+		"sources": [
+			"/Users/llh/Documents/map/frontend/screens/report-staff-trial/Edit.js"
+		],
+		"names": [
+			"React",
+			"connect",
+			"axios",
+			"baseUrl",
+			"Edit",
+			"props",
+			"handleSubmit",
+			"editVenues",
+			"route",
+			"params",
+			"data",
+			"item",
+			"id",
+			"name",
+			"description",
+			"text",
+			"setName",
+			"borderWidth",
+			"borderColor",
+			"padding",
+			"marginTop",
+			"setDescription",
+			"editVenue",
+			"dispatch",
+			"put",
+			"res",
+			"getSetName",
+			"type",
+			"getSetDescription",
+			"mapState",
+			"state",
+			"console",
+			"log",
+			"report",
+			"mapDispatch",
+			"action"
+		],
+		"mappings": "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",
+		"sourcesContent": [
+			"import React from \"react\";\nimport { Image, StyleSheet, Text, TextInput, Button, View, FlatList } from \"react-native\";\nimport { connect } from \"react-redux\";\nimport axios from 'axios';\nimport baseUrl from '../../assets/constants/BaseUrl'\n\nEdit = (props) => {\n\tconst handleSubmit = async () => {\n\t\tprops.editVenues(props.route.params.data.item.id, props.name, props.description)\n\t}\n\treturn (\n\t\t<View>\n\t\t\t<TextInput\n\t\t\t\tplaceholder={props.route.params.data.item.name}\n\t\t\t\tonChangeText={(text) => { props.setName(text) }}\n\t\t\t\tstyle={{ borderWidth: 2, borderColor: '#000', padding: 10, marginTop: 10 }}\n\t\t\t/>\n\t\t\t<TextInput\n\t\t\t\tplaceholder={props.route.params.data.item.description}\n\t\t\t\tonChangeText={(text) => { props.setDescription(text) }}\n\t\t\t\tstyle={{ borderWidth: 2, borderColor: '#000', padding: 10, marginTop: 10 }}\n\t\t\t/>\n\t\t\t<Button title=\"submit\" onPress={() => { handleSubmit() }} />\n\t\t</View>\n\t);\n\n}\n\nconst editVenue = (id, name, description) => async dispatch => {\n\tconst res = await axios.put(`${baseUrl}/venue/update/${id}`, { name: name, description: description })\n};\n\nconst getSetName = (data) => {\n\treturn {\n\t\ttype: 'CREATE_NAME',\n\t\tname: data\n\t}\n};\n\nconst getSetDescription = (data) => {\n\treturn {\n\t\ttype: 'CREATE_DESCRIPTION',\n\t\tdescription: data\n\t}\n};\n\nconst mapState = (state) => {\n\tconsole.log(state.report.name)\n\tconsole.log(state.report.description)\n\treturn {\n\t\tname: state.report.name,\n\t\tdescription: state.report.description\n\t}\n}\n\nconst mapDispatch = (dispatch) => {\n\treturn {\n\t\teditVenues(id, name, description) {\n\t\t\tdispatch(editVenue(id, name, description))\n\t\t},\n\t\tsetName(res) {\n\t\t\tif (res) {\n\t\t\t\tconst action = getSetName(res)\n\t\t\t\tdispatch(action)\n\t\t\t}\n\t\t},\n\t\tsetDescription(res) {\n\t\t\tif (res) {\n\t\t\t\tconst action = getSetDescription(res)\n\t\t\t\tdispatch(action)\n\t\t\t}\n\t\t}\n\t}\n}\n\nexport default connect(mapState, mapDispatch)(Edit)"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

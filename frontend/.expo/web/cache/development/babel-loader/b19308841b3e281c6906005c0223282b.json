@@ -1,0 +1,58 @@
+{
+	"ast": null,
+	"code": "import React, { Component, useState, useEffect, useCallback } from 'react';\nimport View from \"react-native-web/dist/exports/View\";\nimport StyleSheet from \"react-native-web/dist/exports/StyleSheet\";\nimport SafeAreaView from \"react-native-web/dist/exports/SafeAreaView\";\nimport Text from \"react-native-web/dist/exports/Text\";\nimport Image from \"react-native-web/dist/exports/Image\";\nimport FlatList from \"react-native-web/dist/exports/FlatList\";\nimport ScrollView from \"react-native-web/dist/exports/ScrollView\";\nimport ImageBackground from \"react-native-web/dist/exports/ImageBackground\";\nimport TouchableOpacity from \"react-native-web/dist/exports/TouchableOpacity\";\nimport { BlurView } from 'expo-blur';\nimport styles from \"./style\";\nimport StarRating from \"../Rating\";\nimport { windowHeight, windowWidth } from \"../../assets/constants/Dimensions\";\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nimport { jsxs as _jsxs } from \"react/jsx-runtime\";\n\nvar ReviewBox = function ReviewBox(item, index) {\n  return _jsxs(View, {\n    style: {\n      borderRadius: 5,\n      margin: 2.5,\n      width: windowWidth / 2 - 7.5,\n      height: (windowWidth / 2 - 7.5) * item.ratio * 0.8 + 120,\n      backgroundColor: 'white'\n    },\n    children: [_jsx(View, {\n      style: {\n        borderRadius: 5,\n        margin: 5,\n        width: windowWidth / 2 - 7.5 - 10,\n        height: (windowWidth / 2 - 7.5) * item.ratio * 0.8,\n        backgroundColor: item.color\n      }\n    }), _jsxs(View, {\n      style: {\n        paddingHorizontal: 10,\n        flexDirection: 'row',\n        justifyContent: 'space-between'\n      },\n      children: [_jsx(View, {\n        style: {\n          height: 21,\n          width: windowWidth / 2 - 7.5 - 85,\n          padding: 2.5,\n          borderBottomLeftRadius: 5,\n          backgroundColor: 'rgba(255, 255, 255, 0.5)',\n          marginTop: -25,\n          marginLeft: -5,\n          justifyContent: 'center',\n          alignItems: 'center'\n        }\n      }), _jsx(View, {\n        style: {\n          height: 21,\n          width: 75,\n          padding: 2.5,\n          borderBottomRightRadius: 5,\n          backgroundColor: 'rgba(255, 255, 255, 1)',\n          marginTop: -25,\n          marginRight: -5,\n          justifyContent: 'center',\n          alignItems: 'center'\n        },\n        children: _jsx(StarRating, {\n          ratings: 3,\n          reviews: 0\n        })\n      })]\n    }), _jsxs(View, {\n      style: {\n        paddingHorizontal: 10,\n        flexDirection: 'row',\n        justifyContent: 'space-between'\n      },\n      children: [_jsx(Text, {\n        style: {\n          color: '#2b2b2b',\n          fontSize: 14,\n          fontWeight: 'bold'\n        },\n        children: \"NAME\"\n      }), _jsx(Text, {\n        style: {\n          color: '#2b2b2b',\n          fontSize: 14,\n          fontWeight: 'bold'\n        },\n        children: \"21.10.19\"\n      })]\n    }), _jsx(View, {\n      style: styles.line\n    }), _jsx(View, {\n      style: {\n        marginHorizontal: 7.5,\n        height: 120\n      },\n      children: _jsx(Text, {\n        style: [styles.descText, {\n          color: 'gray'\n        }],\n        children: \"Originally a fishing village and market town, Shanghai grew in importance in the 19th century due to both domestic and foreign trade. \"\n      })\n    })]\n  }, index);\n};\n\nexport default function WaterfallList(_ref) {\n  var items = _ref.items;\n  return _jsx(ScrollView, {\n    showsVerticalScrollIndicator: false,\n    children: _jsxs(View, {\n      style: {\n        flexDirection: 'row'\n      },\n      children: [_jsx(View, {\n        children: items.filter(function (_, index) {\n          return index % 2 !== 0;\n        }).map(function (item, index) {\n          return ReviewBox(item, index);\n        })\n      }), _jsx(View, {\n        children: items.filter(function (_, index) {\n          return index % 2 === 0;\n        }).map(function (item, index) {\n          return ReviewBox(item, index);\n        })\n      })]\n    })\n  });\n}",
+	"map": {
+		"version": 3,
+		"sources": [
+			"/Users/llh/Documents/map/frontend/components/WaterfallList/index.js"
+		],
+		"names": [
+			"React",
+			"Component",
+			"useState",
+			"useEffect",
+			"useCallback",
+			"BlurView",
+			"styles",
+			"StarRating",
+			"windowHeight",
+			"windowWidth",
+			"ReviewBox",
+			"item",
+			"index",
+			"borderRadius",
+			"margin",
+			"width",
+			"height",
+			"ratio",
+			"backgroundColor",
+			"color",
+			"paddingHorizontal",
+			"flexDirection",
+			"justifyContent",
+			"padding",
+			"borderBottomLeftRadius",
+			"marginTop",
+			"marginLeft",
+			"alignItems",
+			"borderBottomRightRadius",
+			"marginRight",
+			"fontSize",
+			"fontWeight",
+			"line",
+			"marginHorizontal",
+			"descText",
+			"WaterfallList",
+			"items",
+			"filter",
+			"_",
+			"map"
+		],
+		"mappings": "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",
+		"sourcesContent": [
+			"import React, { Component, useState, useEffect, useCallback } from 'react'\nimport { View, StyleSheet, SafeAreaView, Text, Image, FlatList, ScrollView, ImageBackground, TouchableOpacity } from 'react-native'\nimport { BlurView } from 'expo-blur'\n\nimport styles from './style';\n\nimport StarRating from '../Rating';\n\nimport { windowHeight, windowWidth } from '../../assets/constants/Dimensions'\n\nconst ReviewBox = (item, index) => {\n    return (\n      <View key={index} style={{ borderRadius: 5, margin: 2.5, width: windowWidth / 2 - 7.5, height: (windowWidth / 2 - 7.5) * item.ratio * 0.8 + 120, backgroundColor: 'white' }}>\n        <View style={{ borderRadius: 5, margin: 5, width: windowWidth / 2 - 7.5 - 10, height: (windowWidth / 2 - 7.5) * item.ratio * 0.8, backgroundColor: item.color }}></View>\n        <View style={{ paddingHorizontal: 10, flexDirection: 'row', justifyContent: 'space-between' }}>\n          {/* <View style={{ height: 46, width: 46, borderRadius: 23, backgroundColor: 'white', marginTop: -55, marginLeft: -1, justifyContent: 'center', alignItems: 'center' }}>\n          <Image style={{height: 40, width: 40, borderRadius: 20, }} source={require('../../../assets/images/test.png')} />\n          </View> */}\n          <View style={{ height: 21, width: windowWidth / 2 - 7.5 - 85, padding: 2.5, borderBottomLeftRadius: 5, backgroundColor: 'rgba(255, 255, 255, 0.5)', marginTop: -25, marginLeft: -5, justifyContent: 'center', alignItems: 'center' }}>\n          </View>\n          <View style={{ height: 21, width: 75, padding: 2.5, borderBottomRightRadius: 5, backgroundColor: 'rgba(255, 255, 255, 1)', marginTop: -25, marginRight: -5, justifyContent: 'center', alignItems: 'center' }}>\n            <StarRating ratings={3} reviews={0} />\n          </View>\n        </View>\n        <View style={{ paddingHorizontal: 10, flexDirection: 'row', justifyContent: 'space-between' }}>\n          <Text style={{ color: '#2b2b2b', fontSize: 14, fontWeight: 'bold' }}>NAME</Text>\n          <Text style={{ color: '#2b2b2b', fontSize: 14, fontWeight: 'bold' }}>21.10.19</Text>\n        </View>\n        <View style={styles.line}></View>\n        <View style={{ marginHorizontal: 7.5, height: 120 }}><Text style={[styles.descText, { color: 'gray' }]}>Originally a fishing village and market town, Shanghai grew in importance in the 19th century due to both domestic and foreign trade. </Text></View>\n      </View>\n    )\n  }\n\nexport default function WaterfallList({items}) {\n    return (\n        <ScrollView\n            showsVerticalScrollIndicator={false}\n          >\n            <View style={{ flexDirection: 'row' }}>\n              <View>\n                {items\n                  .filter((_, index) => index % 2 !== 0)\n                  .map((item, index) => (\n                    ReviewBox(item, index)\n                  ))}\n              </View>\n              <View>\n                {items\n                  .filter((_, index) => index % 2 === 0)\n                  .map((item, index) => (\n                    ReviewBox(item, index)\n                  ))}\n              </View>\n            </View>\n          </ScrollView>\n    )\n}"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

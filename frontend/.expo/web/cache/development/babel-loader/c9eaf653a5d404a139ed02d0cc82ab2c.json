@@ -1,0 +1,29 @@
+{
+	"ast": null,
+	"code": "import React, { useState, useEffect } from 'react';\nimport View from \"react-native-web/dist/exports/View\";\nimport ScrollView from \"react-native-web/dist/exports/ScrollView\";\nimport TouchableOpacity from \"react-native-web/dist/exports/TouchableOpacity\";\nimport Feather from \"@expo/vector-icons/Feather\";\nimport styles from \"./styles\";\nimport { jsx as _jsx } from \"react/jsx-runtime\";\n\nvar BackButton = function BackButton(_ref) {\n  var navigation = _ref.navigation;\n  return _jsx(TouchableOpacity, {\n    onPress: navigation,\n    children: _jsx(View, {\n      style: [styles.backButton, {\n        position: 'absolute',\n        top: 5,\n        left: 20\n      }],\n      children: _jsx(Feather, {\n        name: \"chevron-left\",\n        color: \"white\",\n        size: 26\n      })\n    })\n  });\n};\n\nexport default BackButton;",
+	"map": {
+		"version": 3,
+		"sources": [
+			"/Users/llh/Documents/map/frontend/components/BackButton/index.js"
+		],
+		"names": [
+			"React",
+			"useState",
+			"useEffect",
+			"Feather",
+			"styles",
+			"BackButton",
+			"navigation",
+			"backButton",
+			"position",
+			"top",
+			"left"
+		],
+		"mappings": "AAAA,OAAOA,KAAP,IAAgBC,QAAhB,EAA0BC,SAA1B,QAA2C,OAA3C;;;;AAGA,OAAOC,OAAP;AACA,OAAOC,MAAP;;;AAEA,IAAMC,UAAU,GAAG,SAAbA,UAAa,OAAkB;AAAA,MAAhBC,UAAgB,QAAhBA,UAAgB;AACjC,SACA,KAAC,gBAAD;AAAkB,IAAA,OAAO,EAAEA,UAA3B;AAAA,cACM,KAAC,IAAD;AAAM,MAAA,KAAK,EAAE,CAACF,MAAM,CAACG,UAAR,EAAoB;AAAEC,QAAAA,QAAQ,EAAE,UAAZ;AAAwBC,QAAAA,GAAG,EAAE,CAA7B;AAAgCC,QAAAA,IAAI,EAAE;AAAtC,OAApB,CAAb;AAAA,gBACE,KAAC,OAAD;AAAS,QAAA,IAAI,EAAC,cAAd;AAA6B,QAAA,KAAK,EAAC,OAAnC;AAA2C,QAAA,IAAI,EAAE;AAAjD;AADF;AADN,IADA;AAOH,CARD;;AAUA,eAAeL,UAAf",
+		"sourcesContent": [
+			"import React, { useState, useEffect } from 'react';\nimport { View, ScrollView, TouchableOpacity } from 'react-native';\n\nimport Feather from 'react-native-vector-icons/Feather'\nimport styles from './styles';\n\nconst BackButton = ({navigation}) => {\n    return (\n    <TouchableOpacity onPress={navigation}>\n          <View style={[styles.backButton, { position: 'absolute', top: 5, left: 20, }]}>\n            <Feather name=\"chevron-left\" color=\"white\" size={26}></Feather>\n          </View>\n        </TouchableOpacity>\n    )\n}\n\nexport default BackButton;"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

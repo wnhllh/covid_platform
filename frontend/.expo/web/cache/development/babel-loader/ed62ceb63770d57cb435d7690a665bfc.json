@@ -1,1 +1,38 @@
-{"ast":null,"code":"import React from 'react';\nimport StyleSheet from \"react-native-web/dist/exports/StyleSheet\";\nimport View from \"react-native-web/dist/exports/View\";\nimport Text from \"react-native-web/dist/exports/Text\";\nimport Ionicons from \"@expo/vector-icons/Ionicons\";\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nimport { jsxs as _jsxs } from \"react/jsx-runtime\";\n\nvar StarRating = function StarRating(props) {\n  var stars = [];\n\n  for (var i = 1; i <= 5; i++) {\n    var name = 'ios-star';\n\n    if (i > props.ratings) {\n      name = 'ios-star-outline';\n    }\n\n    stars.push(_jsx(Ionicons, {\n      name: name,\n      size: 13,\n      style: styles.star\n    }, i));\n  }\n\n  return _jsxs(View, {\n    style: styles.container,\n    children: [stars, props.reviews != 0 && _jsxs(Text, {\n      style: styles.text,\n      children: [\"(\", props.reviews, \")\"]\n    })]\n  });\n};\n\nexport default StarRating;\nvar styles = StyleSheet.create({\n  container: {\n    flexDirection: 'row',\n    alignItems: 'center',\n    marginTop: 1,\n    marginLeft: 1\n  },\n  star: {\n    color: '#FF8C00'\n  },\n  text: {\n    fontSize: 11,\n    marginLeft: 5,\n    color: '#444'\n  }\n});","map":{"version":3,"sources":["/Users/llh/Documents/map/frontend/components/StarRating.js"],"names":["React","Ionicons","StarRating","props","stars","i","name","ratings","push","styles","star","container","reviews","text","StyleSheet","create","flexDirection","alignItems","marginTop","marginLeft","color","fontSize"],"mappings":"AAAA,OAAOA,KAAP,MAAkB,OAAlB;;;;AAGA,OAAOC,QAAP;;;;AAEA,IAAMC,UAAU,GAAG,SAAbA,UAAa,CAACC,KAAD,EAAW;AAE1B,MAAIC,KAAK,GAAG,EAAZ;;AACA,OAAK,IAAIC,CAAC,GAAG,CAAb,EAAgBA,CAAC,IAAI,CAArB,EAAwBA,CAAC,EAAzB,EAA6B;AACzB,QAAIC,IAAI,GAAG,UAAX;;AACA,QAAID,CAAC,GAAGF,KAAK,CAACI,OAAd,EAAuB;AACnBD,MAAAA,IAAI,GAAG,kBAAP;AACH;;AAEDF,IAAAA,KAAK,CAACI,IAAN,CAAY,KAAC,QAAD;AAAU,MAAA,IAAI,EAAEF,IAAhB;AAAsB,MAAA,IAAI,EAAE,EAA5B;AAAgC,MAAA,KAAK,EAAEG,MAAM,CAACC;AAA9C,OAAyDL,CAAzD,CAAZ;AACH;;AAED,SACI,MAAC,IAAD;AAAM,IAAA,KAAK,EAAGI,MAAM,CAACE,SAArB;AAAA,eACMP,KADN,EAEMD,KAAK,CAACS,OAAN,IAAiB,CAAjB,IAAsB,MAAC,IAAD;AAAM,MAAA,KAAK,EAAEH,MAAM,CAACI,IAApB;AAAA,sBAA4BV,KAAK,CAACS,OAAlC;AAAA,MAF5B;AAAA,IADJ;AAOH,CAnBD;;AAqBA,eAAeV,UAAf;AAEA,IAAMO,MAAM,GAAGK,UAAU,CAACC,MAAX,CAAkB;AAChCJ,EAAAA,SAAS,EAAE;AACVK,IAAAA,aAAa,EAAE,KADL;AAEVC,IAAAA,UAAU,EAAE,QAFF;AAGJC,IAAAA,SAAS,EAAE,CAHP;AAIJC,IAAAA,UAAU,EAAE;AAJR,GADqB;AAOhCT,EAAAA,IAAI,EAAE;AACLU,IAAAA,KAAK,EAAE;AADF,GAP0B;AAUhCP,EAAAA,IAAI,EAAE;AACLQ,IAAAA,QAAQ,EAAE,EADL;AAECF,IAAAA,UAAU,EAAE,CAFb;AAGCC,IAAAA,KAAK,EAAE;AAHR;AAV0B,CAAlB,CAAf","sourcesContent":["import React from 'react';\nimport { StyleSheet, View, Text } from 'react-native';\n\nimport Ionicons from 'react-native-vector-icons/Ionicons';\n\nconst StarRating = (props) => {\n\n    let stars = [];\n    for (var i = 1; i <= 5; i++) {\n        let name = 'ios-star';\n        if (i > props.ratings) {\n            name = 'ios-star-outline';\n        }\n\n        stars.push((<Ionicons name={name} size={13} style={styles.star} key={i} />));\n    }\n\n    return (\n        <View style={ styles.container }>\n            { stars }\n            { props.reviews != 0 && <Text style={styles.text}>({props.reviews})</Text>}\n        </View>\n    );\n\t\n}\n\nexport default StarRating;\n\nconst styles = StyleSheet.create({\n\tcontainer: {\n\t\tflexDirection: 'row',\n\t\talignItems: 'center',\n        marginTop: 1,\n        marginLeft: 1\n\t},\n\tstar: {\n\t\tcolor: '#FF8C00'\n\t},\n\ttext: {\n\t\tfontSize: 11,\n        marginLeft: 5,\n        color: '#444',\n\t}\n});"]},"metadata":{},"sourceType":"module"}
+{
+	"ast": null,
+	"code": "import React from 'react';\nimport StyleSheet from \"react-native-web/dist/exports/StyleSheet\";\nimport View from \"react-native-web/dist/exports/View\";\nimport Text from \"react-native-web/dist/exports/Text\";\nimport Ionicons from \"@expo/vector-icons/Ionicons\";\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nimport { jsxs as _jsxs } from \"react/jsx-runtime\";\n\nvar StarRating = function StarRating(props) {\n  var stars = [];\n\n  for (var i = 1; i <= 5; i++) {\n    var name = 'ios-star';\n\n    if (i > props.ratings) {\n      name = 'ios-star-outline';\n    }\n\n    stars.push(_jsx(Ionicons, {\n      name: name,\n      size: 13,\n      style: styles.star\n    }, i));\n  }\n\n  return _jsxs(View, {\n    style: styles.container,\n    children: [stars, props.reviews != 0 && _jsxs(Text, {\n      style: styles.text,\n      children: [\"(\", props.reviews, \")\"]\n    })]\n  });\n};\n\nexport default StarRating;\nvar styles = StyleSheet.create({\n  container: {\n    flexDirection: 'row',\n    alignItems: 'center',\n    marginTop: 1,\n    marginLeft: 1\n  },\n  star: {\n    color: '#FF8C00'\n  },\n  text: {\n    fontSize: 11,\n    marginLeft: 5,\n    color: '#444'\n  }\n});",
+	"map": {
+		"version": 3,
+		"sources": ["/Users/llh/Documents/map/frontend/components/StarRating.js"],
+		"names": [
+			"React",
+			"Ionicons",
+			"StarRating",
+			"props",
+			"stars",
+			"i",
+			"name",
+			"ratings",
+			"push",
+			"styles",
+			"star",
+			"container",
+			"reviews",
+			"text",
+			"StyleSheet",
+			"create",
+			"flexDirection",
+			"alignItems",
+			"marginTop",
+			"marginLeft",
+			"color",
+			"fontSize"
+		],
+		"mappings": "AAAA,OAAOA,KAAP,MAAkB,OAAlB;;;;AAGA,OAAOC,QAAP;;;;AAEA,IAAMC,UAAU,GAAG,SAAbA,UAAa,CAACC,KAAD,EAAW;AAE1B,MAAIC,KAAK,GAAG,EAAZ;;AACA,OAAK,IAAIC,CAAC,GAAG,CAAb,EAAgBA,CAAC,IAAI,CAArB,EAAwBA,CAAC,EAAzB,EAA6B;AACzB,QAAIC,IAAI,GAAG,UAAX;;AACA,QAAID,CAAC,GAAGF,KAAK,CAACI,OAAd,EAAuB;AACnBD,MAAAA,IAAI,GAAG,kBAAP;AACH;;AAEDF,IAAAA,KAAK,CAACI,IAAN,CAAY,KAAC,QAAD;AAAU,MAAA,IAAI,EAAEF,IAAhB;AAAsB,MAAA,IAAI,EAAE,EAA5B;AAAgC,MAAA,KAAK,EAAEG,MAAM,CAACC;AAA9C,OAAyDL,CAAzD,CAAZ;AACH;;AAED,SACI,MAAC,IAAD;AAAM,IAAA,KAAK,EAAGI,MAAM,CAACE,SAArB;AAAA,eACMP,KADN,EAEMD,KAAK,CAACS,OAAN,IAAiB,CAAjB,IAAsB,MAAC,IAAD;AAAM,MAAA,KAAK,EAAEH,MAAM,CAACI,IAApB;AAAA,sBAA4BV,KAAK,CAACS,OAAlC;AAAA,MAF5B;AAAA,IADJ;AAOH,CAnBD;;AAqBA,eAAeV,UAAf;AAEA,IAAMO,MAAM,GAAGK,UAAU,CAACC,MAAX,CAAkB;AAChCJ,EAAAA,SAAS,EAAE;AACVK,IAAAA,aAAa,EAAE,KADL;AAEVC,IAAAA,UAAU,EAAE,QAFF;AAGJC,IAAAA,SAAS,EAAE,CAHP;AAIJC,IAAAA,UAAU,EAAE;AAJR,GADqB;AAOhCT,EAAAA,IAAI,EAAE;AACLU,IAAAA,KAAK,EAAE;AADF,GAP0B;AAUhCP,EAAAA,IAAI,EAAE;AACLQ,IAAAA,QAAQ,EAAE,EADL;AAECF,IAAAA,UAAU,EAAE,CAFb;AAGCC,IAAAA,KAAK,EAAE;AAHR;AAV0B,CAAlB,CAAf",
+		"sourcesContent": [
+			"import React from 'react';\nimport { StyleSheet, View, Text } from 'react-native';\n\nimport Ionicons from 'react-native-vector-icons/Ionicons';\n\nconst StarRating = (props) => {\n\n    let stars = [];\n    for (var i = 1; i <= 5; i++) {\n        let name = 'ios-star';\n        if (i > props.ratings) {\n            name = 'ios-star-outline';\n        }\n\n        stars.push((<Ionicons name={name} size={13} style={styles.star} key={i} />));\n    }\n\n    return (\n        <View style={ styles.container }>\n            { stars }\n            { props.reviews != 0 && <Text style={styles.text}>({props.reviews})</Text>}\n        </View>\n    );\n\t\n}\n\nexport default StarRating;\n\nconst styles = StyleSheet.create({\n\tcontainer: {\n\t\tflexDirection: 'row',\n\t\talignItems: 'center',\n        marginTop: 1,\n        marginLeft: 1\n\t},\n\tstar: {\n\t\tcolor: '#FF8C00'\n\t},\n\ttext: {\n\t\tfontSize: 11,\n        marginLeft: 5,\n        color: '#444',\n\t}\n});"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

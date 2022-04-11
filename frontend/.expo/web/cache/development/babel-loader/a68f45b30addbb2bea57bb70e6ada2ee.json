@@ -1,0 +1,27 @@
+{
+	"ast": null,
+	"code": "import * as React from 'react';\nimport { createNativeStackNavigator } from '@react-navigation/native-stack';\nimport App from \"./View\";\nimport Create from \"./Create\";\nimport Details from \"./Details\";\nimport Edit from \"./Edit\";\nimport Upload from \"./Upload\";\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nimport { jsxs as _jsxs } from \"react/jsx-runtime\";\nvar Tab = createNativeStackNavigator();\n\nfunction Report() {\n  return _jsxs(Tab.Navigator, {\n    initialRouteName: \"View\",\n    children: [_jsx(Tab.Screen, {\n      name: \"Venues Created by Me\",\n      component: App\n    }), _jsx(Tab.Screen, {\n      name: \"Create\",\n      component: Create\n    }), _jsx(Tab.Screen, {\n      name: \"Details\",\n      component: Details\n    }), _jsx(Tab.Screen, {\n      name: \"Edit\",\n      component: Edit\n    }), _jsx(Tab.Screen, {\n      name: \"Upload\",\n      component: Upload\n    })]\n  });\n}\n\nexport default Report;",
+	"map": {
+		"version": 3,
+		"sources": [
+			"/Users/llh/Documents/map/frontend/screens/report-staff-trial/App.js"
+		],
+		"names": [
+			"React",
+			"createNativeStackNavigator",
+			"App",
+			"Create",
+			"Details",
+			"Edit",
+			"Upload",
+			"Tab",
+			"Report"
+		],
+		"mappings": "AAAA,OAAO,KAAKA,KAAZ,MAAuB,OAAvB;AACA,SAASC,0BAAT,QAA2C,gCAA3C;AACA,OAAOC,GAAP;AACA,OAAOC,MAAP;AACA,OAAOC,OAAP;AACA,OAAOC,IAAP;AACA,OAAOC,MAAP;;;AAEA,IAAMC,GAAG,GAAGN,0BAA0B,EAAtC;;AAEA,SAASO,MAAT,GAAkB;AACjB,SACC,MAAC,GAAD,CAAK,SAAL;AAAe,IAAA,gBAAgB,EAAC,MAAhC;AAAA,eACC,KAAC,GAAD,CAAK,MAAL;AAAY,MAAA,IAAI,EAAC,sBAAjB;AAAwC,MAAA,SAAS,EAAEN;AAAnD,MADD,EAEC,KAAC,GAAD,CAAK,MAAL;AAAY,MAAA,IAAI,EAAC,QAAjB;AAA0B,MAAA,SAAS,EAAEC;AAArC,MAFD,EAGC,KAAC,GAAD,CAAK,MAAL;AAAY,MAAA,IAAI,EAAC,SAAjB;AAA2B,MAAA,SAAS,EAAEC;AAAtC,MAHD,EAIC,KAAC,GAAD,CAAK,MAAL;AAAY,MAAA,IAAI,EAAC,MAAjB;AAAwB,MAAA,SAAS,EAAEC;AAAnC,MAJD,EAKC,KAAC,GAAD,CAAK,MAAL;AAAY,MAAA,IAAI,EAAC,QAAjB;AAA0B,MAAA,SAAS,EAAEC;AAArC,MALD;AAAA,IADD;AASA;;AAED,eAAeE,MAAf",
+		"sourcesContent": [
+			"import * as React from 'react';\nimport { createNativeStackNavigator } from '@react-navigation/native-stack';\nimport App from './View'\nimport Create from './Create'\nimport Details from './Details'\nimport Edit from './Edit'\nimport Upload from './Upload'\n\nconst Tab = createNativeStackNavigator();\n\nfunction Report() {\n\treturn (\n\t\t<Tab.Navigator initialRouteName=\"View\">\n\t\t\t<Tab.Screen name=\"Venues Created by Me\" component={App}></Tab.Screen>\n\t\t\t<Tab.Screen name=\"Create\" component={Create} />\n\t\t\t<Tab.Screen name=\"Details\" component={Details} />\n\t\t\t<Tab.Screen name=\"Edit\" component={Edit} />\n\t\t\t<Tab.Screen name=\"Upload\" component={Upload} />\n\t\t</Tab.Navigator>\n\t);\n}\n\nexport default Report;"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

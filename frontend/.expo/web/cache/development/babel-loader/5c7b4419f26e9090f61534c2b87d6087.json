@@ -1,0 +1,26 @@
+{
+	"ast": null,
+	"code": "import _slicedToArray from \"@babel/runtime/helpers/slicedToArray\";\nimport React, { useState } from \"react\";\nimport StyleSheet from \"react-native-web/dist/exports/StyleSheet\";\nimport Text from \"react-native-web/dist/exports/Text\";\nimport View from \"react-native-web/dist/exports/View\";\nimport Image from \"react-native-web/dist/exports/Image\";\nimport ScrollView from \"react-native-web/dist/exports/ScrollView\";\nimport Signature from \"react-native-signature-canvas\";\nimport { jsx as _jsx } from \"react/jsx-runtime\";\n\nvar Sign = function Sign() {\n  var _useState = useState(true),\n      _useState2 = _slicedToArray(_useState, 2),\n      scrollEnabled = _useState2[0],\n      setScrollEnabled = _useState2[1];\n\n  return _jsx(View, {\n    style: {\n      height: 125\n    },\n    children: _jsx(Signature, {\n      onOK: function onOK(img) {\n        return console.log(img);\n      },\n      onBegin: function onBegin() {\n        return setScrollEnabled(false);\n      },\n      onEnd: function onEnd() {\n        return setScrollEnabled(true);\n      },\n      descriptionText: \"Sign\",\n      clearText: \"Clear\",\n      confirmText: \"Save\",\n      imageType: \"image/jpeg\"\n    })\n  });\n};\n\nexport default Sign;",
+	"map": {
+		"version": 3,
+		"sources": ["/Users/llh/Documents/map/frontend/components/Sign/index.js"],
+		"names": [
+			"React",
+			"useState",
+			"Signature",
+			"Sign",
+			"scrollEnabled",
+			"setScrollEnabled",
+			"height",
+			"img",
+			"console",
+			"log"
+		],
+		"mappings": ";AAAA,OAAOA,KAAP,IAAgBC,QAAhB,QAAgC,OAAhC;;;;;;AAEA,OAAOC,SAAP,MAAsB,+BAAtB;;;AAGA,IAAMC,IAAI,GAAG,SAAPA,IAAO,GAAM;AACjB,kBAA0CF,QAAQ,CAAC,IAAD,CAAlD;AAAA;AAAA,MAAOG,aAAP;AAAA,MAAsBC,gBAAtB;;AAEA,SACI,KAAC,IAAD;AAAM,IAAA,KAAK,EAAE;AAACC,MAAAA,MAAM,EAAE;AAAT,KAAb;AAAA,cACE,KAAC,SAAD;AACE,MAAA,IAAI,EAAE,cAACC,GAAD;AAAA,eAASC,OAAO,CAACC,GAAR,CAAYF,GAAZ,CAAT;AAAA,OADR;AAEE,MAAA,OAAO,EAAE;AAAA,eAAMF,gBAAgB,CAAC,KAAD,CAAtB;AAAA,OAFX;AAGE,MAAA,KAAK,EAAE;AAAA,eAAMA,gBAAgB,CAAC,IAAD,CAAtB;AAAA,OAHT;AAIE,MAAA,eAAe,EAAC,MAJlB;AAKE,MAAA,SAAS,EAAC,OALZ;AAME,MAAA,WAAW,EAAC,MANd;AAOE,MAAA,SAAS,EAAC;AAPZ;AADF,IADJ;AAaD,CAhBD;;AAkBA,eAAeF,IAAf",
+		"sourcesContent": [
+			"import React, { useState } from \"react\";\nimport { StyleSheet, Text, View, Image, ScrollView } from \"react-native\";\nimport Signature from \"react-native-signature-canvas\";\n\n\nconst Sign = () => {\n  const [scrollEnabled, setScrollEnabled] = useState(true);\n\n  return (\n      <View style={{height: 125}}>\n        <Signature\n          onOK={(img) => console.log(img)}\n          onBegin={() => setScrollEnabled(false)}\n          onEnd={() => setScrollEnabled(true)}\n          descriptionText=\"Sign\"\n          clearText=\"Clear\"\n          confirmText=\"Save\"\n          imageType=\"image/jpeg\"\n        />\n      </View>\n  );\n};\n\nexport default Sign;"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

@@ -1,12 +1,12 @@
-import React from 'react';
-import { View, ScrollView, Text } from 'react-native';
-import { Button } from 'react-native-paper';
-import { connect } from "react-redux";
-import axios from 'axios';
+import React from 'react'
+import { View, ScrollView, Text } from 'react-native'
+import { Button } from 'react-native-paper'
+import { connect } from 'react-redux'
+import axios from 'axios'
 import baseUrl from '../../assets/constants/BaseUrl'
 
-function Details(props) {
-	const data = props.route.params.data;
+function Details (props) {
+	const data = props.route.params.data
 
 	const handleDelete = async (item) => {
 		props.deleteVenues(item.id)
@@ -23,13 +23,15 @@ function Details(props) {
 				<Button
 					icon="update"
 					mode="contained"
-					onPress={() => props.navigation.navigate('Edit', { data: data })}>
+					onPress={() => props.navigation.navigate('Edit', { data: data })}
+				>
 					Edit Venue
 				</Button>
 				<Button
 					icon="delete"
 					mode="contained"
-					onPress={() => handleDelete(props.route.params.data.item)}>
+					onPress={() => handleDelete(props.route.params.data.item)}
+				>
 					Delete Venue
 				</Button>
 			</View>
@@ -37,20 +39,19 @@ function Details(props) {
 	)
 }
 
-const deleteVenue = (id) => async dispatch => {
+const deleteVenue = (id) => async (dispatch) => {
 	const res = await axios.delete(`${baseUrl}/venue/delete/${id}`)
-};
+}
 
 const mapState = (state) => {
-	return {
-	}
+	return {}
 }
 
 const mapDispatch = (dispatch) => {
 	return {
-		deleteVenues(id) {
+		deleteVenues (id) {
 			dispatch(deleteVenue(id))
-		},
+		}
 	}
 }
 

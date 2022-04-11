@@ -1,0 +1,37 @@
+{
+	"ast": null,
+	"code": "import StyleSheet from \"react-native-web/dist/exports/StyleSheet\";\nimport Dimensions from \"react-native-web/dist/exports/Dimensions\";\nexport default StyleSheet.create({\n  button: {\n    height: 50,\n    marginHorizontal: 20,\n    backgroundColor: '#007aff',\n    borderRadius: 15,\n    justifyContent: 'center',\n    alignItems: 'center',\n    shadowColor: 'gray',\n    shadowOffset: {\n      width: 0,\n      height: 10\n    },\n    shadowOpacity: 0.25,\n    shadowRadius: 3.5,\n    elevation: 5\n  },\n  buttonText: {\n    color: 'white',\n    fontSize: 15,\n    fontWeight: 'bold'\n  }\n});",
+	"map": {
+		"version": 3,
+		"sources": [
+			"/Users/llh/Documents/map/frontend/components/Button/styles.js"
+		],
+		"names": [
+			"StyleSheet",
+			"create",
+			"button",
+			"height",
+			"marginHorizontal",
+			"backgroundColor",
+			"borderRadius",
+			"justifyContent",
+			"alignItems",
+			"shadowColor",
+			"shadowOffset",
+			"width",
+			"shadowOpacity",
+			"shadowRadius",
+			"elevation",
+			"buttonText",
+			"color",
+			"fontSize",
+			"fontWeight"
+		],
+		"mappings": ";;AAEA,eAAeA,UAAU,CAACC,MAAX,CAAkB;AAC7BC,EAAAA,MAAM,EAAE;AACJC,IAAAA,MAAM,EAAE,EADJ;AAEJC,IAAAA,gBAAgB,EAAE,EAFd;AAGJC,IAAAA,eAAe,EAAE,SAHb;AAIJC,IAAAA,YAAY,EAAE,EAJV;AAKJC,IAAAA,cAAc,EAAE,QALZ;AAMJC,IAAAA,UAAU,EAAE,QANR;AAQJC,IAAAA,WAAW,EAAE,MART;AASJC,IAAAA,YAAY,EAAE;AACVC,MAAAA,KAAK,EAAE,CADG;AAEVR,MAAAA,MAAM,EAAE;AAFE,KATV;AAaJS,IAAAA,aAAa,EAAE,IAbX;AAcJC,IAAAA,YAAY,EAAE,GAdV;AAeJC,IAAAA,SAAS,EAAE;AAfP,GADqB;AAkB7BC,EAAAA,UAAU,EAAE;AACRC,IAAAA,KAAK,EAAE,OADC;AAERC,IAAAA,QAAQ,EAAE,EAFF;AAGRC,IAAAA,UAAU,EAAE;AAHJ;AAlBiB,CAAlB,CAAf",
+		"sourcesContent": [
+			"import {StyleSheet, Dimensions} from 'react-native';\n\nexport default StyleSheet.create({\n    button: {\n        height: 50,\n        marginHorizontal: 20,\n        backgroundColor: '#007aff',\n        borderRadius: 15,\n        justifyContent: 'center',\n        alignItems: 'center',\n\n        shadowColor: 'gray',\n        shadowOffset: {\n            width: 0,\n            height: 10\n        },\n        shadowOpacity: 0.25,\n        shadowRadius: 3.5,\n        elevation: 5\n    },\n    buttonText: {\n        color: 'white',\n        fontSize: 15,\n        fontWeight: 'bold'\n    }\n});\n"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

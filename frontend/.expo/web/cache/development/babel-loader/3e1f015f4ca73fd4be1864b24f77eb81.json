@@ -1,0 +1,52 @@
+{
+	"ast": null,
+	"code": "import _slicedToArray from \"@babel/runtime/helpers/slicedToArray\";\nimport React, { useState } from 'react';\nimport StyleSheet from \"react-native-web/dist/exports/StyleSheet\";\nimport View from \"react-native-web/dist/exports/View\";\nimport Text from \"react-native-web/dist/exports/Text\";\nimport TouchableOpacity from \"react-native-web/dist/exports/TouchableOpacity\";\nimport { jsx as _jsx } from \"react/jsx-runtime\";\nexport default function RadioSwitch(_ref) {\n  var selectionMode = _ref.selectionMode,\n      optionlist = _ref.optionlist,\n      onSelectSwitch = _ref.onSelectSwitch;\n\n  var _useState = useState(selectionMode),\n      _useState2 = _slicedToArray(_useState, 2),\n      getSelectionMode = _useState2[0],\n      setSelectionMode = _useState2[1];\n\n  var updateSwitchData = function updateSwitchData(value) {\n    setSelectionMode(value);\n    onSelectSwitch(value);\n  };\n\n  return _jsx(View, {\n    style: [styles.listWrapper],\n    children: optionlist.map(function (category, index) {\n      return _jsx(TouchableOpacity, {\n        activeOpacity: 1,\n        onPress: function onPress() {\n          return updateSwitchData(index + 1);\n        },\n        style: {\n          flex: 1,\n          backgroundColor: getSelectionMode == index + 1 ? 'gray' : 'white',\n          borderRadius: 5,\n          marginLeft: 5,\n          marginRight: 5,\n          justifyContent: 'center',\n          alignItems: 'center',\n          height: 27\n        },\n        children: _jsx(Text, {\n          style: [styles.listText, index + 1 == getSelectionMode && styles.activeListText],\n          children: category\n        })\n      }, index);\n    })\n  });\n}\nvar styles = StyleSheet.create({\n  listWrapper: {\n    flexDirection: 'row',\n    justifyContent: 'space-between',\n    alignItems: 'center',\n    height: 35,\n    width: '100%',\n    backgroundColor: '#f1f1f1',\n    borderRadius: 7,\n    borderColor: '#ad40af'\n  },\n  listText: {\n    fontSize: 12,\n    fontWeight: 'bold',\n    color: 'gray'\n  },\n  activeListText: {\n    color: 'white',\n    borderBottomWidth: 1\n  }\n});",
+	"map": {
+		"version": 3,
+		"sources": [
+			"/Users/llh/Documents/map/frontend/components/RadioSwitch/index.js"
+		],
+		"names": [
+			"React",
+			"useState",
+			"RadioSwitch",
+			"selectionMode",
+			"optionlist",
+			"onSelectSwitch",
+			"getSelectionMode",
+			"setSelectionMode",
+			"updateSwitchData",
+			"value",
+			"styles",
+			"listWrapper",
+			"map",
+			"category",
+			"index",
+			"flex",
+			"backgroundColor",
+			"borderRadius",
+			"marginLeft",
+			"marginRight",
+			"justifyContent",
+			"alignItems",
+			"height",
+			"listText",
+			"activeListText",
+			"StyleSheet",
+			"create",
+			"flexDirection",
+			"width",
+			"borderColor",
+			"fontSize",
+			"fontWeight",
+			"color",
+			"borderBottomWidth"
+		],
+		"mappings": ";AAAA,OAAOA,KAAP,IAAgBC,QAAhB,QAAgC,OAAhC;;;;;;AAGA,eAAe,SAASC,WAAT,OACgB;AAAA,MADOC,aACP,QADOA,aACP;AAAA,MAA9BC,UAA8B,QAA9BA,UAA8B;AAAA,MAAlBC,cAAkB,QAAlBA,cAAkB;;AAC9B,kBAA6CJ,QAAQ,CAACE,aAAD,CAArD;AAAA;AAAA,MAAOG,gBAAP;AAAA,MAAyBC,gBAAzB;;AAEA,MAAMC,gBAAgB,GAAG,SAAnBA,gBAAmB,CAACC,KAAD,EAAW;AACnCF,IAAAA,gBAAgB,CAACE,KAAD,CAAhB;AACAJ,IAAAA,cAAc,CAACI,KAAD,CAAd;AACA,GAHD;;AAKA,SACC,KAAC,IAAD;AACC,IAAA,KAAK,EAAE,CAACC,MAAM,CAACC,WAAR,CADR;AAAA,cAGEP,UAAU,CAACQ,GAAX,CAAe,UAACC,QAAD,EAAWC,KAAX;AAAA,aACf,KAAC,gBAAD;AAEC,QAAA,aAAa,EAAE,CAFhB;AAGC,QAAA,OAAO,EAAE;AAAA,iBAAMN,gBAAgB,CAACM,KAAK,GAAG,CAAT,CAAtB;AAAA,SAHV;AAIC,QAAA,KAAK,EAAE;AACNC,UAAAA,IAAI,EAAE,CADA;AAENC,UAAAA,eAAe,EAAEV,gBAAgB,IAAIQ,KAAK,GAAG,CAA5B,GAAgC,MAAhC,GAAyC,OAFpD;AAGNG,UAAAA,YAAY,EAAE,CAHR;AAINC,UAAAA,UAAU,EAAE,CAJN;AAKNC,UAAAA,WAAW,EAAE,CALP;AAMNC,UAAAA,cAAc,EAAE,QANV;AAONC,UAAAA,UAAU,EAAE,QAPN;AAQNC,UAAAA,MAAM,EAAE;AARF,SAJR;AAAA,kBAeC,KAAC,IAAD;AAGC,UAAA,KAAK,EAAE,CAACZ,MAAM,CAACa,QAAR,EAAmBT,KAAK,GAAG,CAAT,IAAeR,gBAAf,IAAmCI,MAAM,CAACc,cAA5D,CAHR;AAAA,oBAMEX;AANF;AAfD,SACMC,KADN,CADe;AAAA,KAAf;AAHF,IADD;AAgCA;AAED,IAAMJ,MAAM,GAAGe,UAAU,CAACC,MAAX,CAAkB;AAChCf,EAAAA,WAAW,EAAE;AACZgB,IAAAA,aAAa,EAAE,KADH;AAEZP,IAAAA,cAAc,EAAE,eAFJ;AAGZC,IAAAA,UAAU,EAAE,QAHA;AAIZC,IAAAA,MAAM,EAAE,EAJI;AAIAM,IAAAA,KAAK,EAAE,MAJP;AAIeZ,IAAAA,eAAe,EAAE,SAJhC;AAI2CC,IAAAA,YAAY,EAAE,CAJzD;AAI4DY,IAAAA,WAAW,EAAE;AAJzE,GADmB;AAOhCN,EAAAA,QAAQ,EAAE;AACTO,IAAAA,QAAQ,EAAE,EADD;AAETC,IAAAA,UAAU,EAAE,MAFH;AAGTC,IAAAA,KAAK,EAAE;AAHE,GAPsB;AAYhCR,EAAAA,cAAc,EAAE;AACfQ,IAAAA,KAAK,EAAE,OADQ;AAEfC,IAAAA,iBAAiB,EAAE;AAFJ;AAZgB,CAAlB,CAAf",
+		"sourcesContent": [
+			"import React, { useState } from 'react';\nimport { StyleSheet, View, Text, TouchableOpacity } from 'react-native';\n\nexport default function RadioSwitch({ selectionMode,\n\toptionlist, onSelectSwitch }) {\n\tconst [getSelectionMode, setSelectionMode] = useState(selectionMode);\n\n\tconst updateSwitchData = (value) => {\n\t\tsetSelectionMode(value);\n\t\tonSelectSwitch(value);\n\t}\n\n\treturn (\n\t\t<View\n\t\t\tstyle={[styles.listWrapper]}\n\t\t>\n\t\t\t{optionlist.map((category, index) => (\n\t\t\t\t<TouchableOpacity\n\t\t\t\t\tkey={index}\n\t\t\t\t\tactiveOpacity={1}\n\t\t\t\t\tonPress={() => updateSwitchData(index + 1)}\n\t\t\t\t\tstyle={{\n\t\t\t\t\t\tflex: 1,\n\t\t\t\t\t\tbackgroundColor: getSelectionMode == index + 1 ? 'gray' : 'white',\n\t\t\t\t\t\tborderRadius: 5,\n\t\t\t\t\t\tmarginLeft: 5,\n\t\t\t\t\t\tmarginRight: 5,\n\t\t\t\t\t\tjustifyContent: 'center',\n\t\t\t\t\t\talignItems: 'center',\n\t\t\t\t\t\theight: 27,\n\t\t\t\t\t}}\n\t\t\t\t>\n\t\t\t\t\t<Text\n\t\t\t\t\t\t// style={{\n\t\t\t\t\t\t//     color: getSelectionMode == index+1 ? '#e4e4e4' : '#007aff' }}\n\t\t\t\t\t\tstyle={[styles.listText, (index + 1) == getSelectionMode && styles.activeListText]}\n\t\t\t\t\t// style={ getSelectionMode == index+1 ? styles.listText : styles.activeListText }\n\t\t\t\t\t>\n\t\t\t\t\t\t{category}</Text>\n\t\t\t\t</TouchableOpacity>\n\t\t\t))\n\t\t\t}\n\t\t</View>\n\t)\n}\n\nconst styles = StyleSheet.create({\n\tlistWrapper: {\n\t\tflexDirection: 'row',\n\t\tjustifyContent: 'space-between',\n\t\talignItems: 'center',\n\t\theight: 35, width: '100%', backgroundColor: '#f1f1f1', borderRadius: 7, borderColor: '#ad40af'\n\t},\n\tlistText: {\n\t\tfontSize: 12,\n\t\tfontWeight: 'bold',\n\t\tcolor: 'gray',\n\t},\n\tactiveListText: {\n\t\tcolor: 'white',\n\t\tborderBottomWidth: 1,\n\t\t// textDecorationLine: 'underline'\n\t}\n})"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

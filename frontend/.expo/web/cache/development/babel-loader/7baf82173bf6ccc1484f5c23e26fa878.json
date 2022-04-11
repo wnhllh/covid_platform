@@ -1,1 +1,30 @@
-{"ast":null,"code":"import _toConsumableArray from \"@babel/runtime/helpers/toConsumableArray\";\nimport { CHANGE_REFRESH, CHANGE_LIST } from \"./actionType\";\nvar defaultState = {\n  list: [],\n  refreshing: false\n};\nexport default function reducer() {\n  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;\n  var action = arguments.length > 1 ? arguments[1] : undefined;\n\n  if (action.type === CHANGE_LIST) {\n    var newState = {};\n\n    if (action.cover) {\n      newState = {\n        list: _toConsumableArray(action.list),\n        refreshing: false\n      };\n    } else {\n      newState = {\n        list: [].concat(_toConsumableArray(state.list), _toConsumableArray(action.list)),\n        refreshing: false\n      };\n    }\n\n    return newState;\n  } else if (action.type === CHANGE_REFRESH) {\n    var _newState = {\n      list: _toConsumableArray(state.list),\n      refreshing: action.value\n    };\n    return _newState;\n  }\n\n  return state;\n}","map":{"version":3,"sources":["/Users/llh/Documents/map/frontend/screens/view/detail/reducer.js"],"names":["CHANGE_REFRESH","CHANGE_LIST","defaultState","list","refreshing","reducer","state","action","type","newState","cover","value"],"mappings":";AAAA,SAASA,cAAT,EAAyBC,WAAzB;AAEA,IAAMC,YAAY,GAAG;AACjBC,EAAAA,IAAI,EAAE,EADW;AAEjBC,EAAAA,UAAU,EAAE;AAFK,CAArB;AAKA,eAAe,SAASC,OAAT,GAAgD;AAAA,MAA9BC,KAA8B,uEAAtBJ,YAAsB;AAAA,MAARK,MAAQ;;AAC3D,MAAIA,MAAM,CAACC,IAAP,KAAgBP,WAApB,EAAiC;AAC7B,QAAIQ,QAAQ,GAAG,EAAf;;AACA,QAAIF,MAAM,CAACG,KAAX,EAAkB;AACdD,MAAAA,QAAQ,GAAG;AACPN,QAAAA,IAAI,qBAAMI,MAAM,CAACJ,IAAb,CADG;AAEPC,QAAAA,UAAU,EAAE;AAFL,OAAX;AAIH,KALD,MAKO;AACHK,MAAAA,QAAQ,GAAG;AACPN,QAAAA,IAAI,+BAAMG,KAAK,CAACH,IAAZ,sBAAqBI,MAAM,CAACJ,IAA5B,EADG;AAEPC,QAAAA,UAAU,EAAE;AAFL,OAAX;AAIH;;AACD,WAAOK,QAAP;AACH,GAdD,MAeK,IAAIF,MAAM,CAACC,IAAP,KAAgBR,cAApB,EAAoC;AACrC,QAAMS,SAAQ,GAAG;AACbN,MAAAA,IAAI,qBAAMG,KAAK,CAACH,IAAZ,CADS;AAEbC,MAAAA,UAAU,EAAEG,MAAM,CAACI;AAFN,KAAjB;AAIA,WAAOF,SAAP;AACH;;AACD,SAAOH,KAAP;AACH","sourcesContent":["import { CHANGE_REFRESH, CHANGE_LIST } from './actionType';\n\nconst defaultState = {\n    list: [],\n    refreshing: false\n}\n\nexport default function reducer (state = defaultState, action) {\n    if (action.type === CHANGE_LIST) {\n        let newState = {}\n        if (action.cover) {\n            newState = {\n                list: [...action.list],\n                refreshing: false\n            }\n        } else {\n            newState = {\n                list: [...state.list, ...action.list],\n                refreshing: false\n            }\n        }\n        return newState;\n    }\n    else if (action.type === CHANGE_REFRESH) {\n        const newState = {\n            list: [...state.list],\n            refreshing: action.value\n        }\n        return newState;\n    }\n    return state\n}"]},"metadata":{},"sourceType":"module"}
+{
+	"ast": null,
+	"code": "import _toConsumableArray from \"@babel/runtime/helpers/toConsumableArray\";\nimport { CHANGE_REFRESH, CHANGE_LIST } from \"./actionType\";\nvar defaultState = {\n  list: [],\n  refreshing: false\n};\nexport default function reducer() {\n  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;\n  var action = arguments.length > 1 ? arguments[1] : undefined;\n\n  if (action.type === CHANGE_LIST) {\n    var newState = {};\n\n    if (action.cover) {\n      newState = {\n        list: _toConsumableArray(action.list),\n        refreshing: false\n      };\n    } else {\n      newState = {\n        list: [].concat(_toConsumableArray(state.list), _toConsumableArray(action.list)),\n        refreshing: false\n      };\n    }\n\n    return newState;\n  } else if (action.type === CHANGE_REFRESH) {\n    var _newState = {\n      list: _toConsumableArray(state.list),\n      refreshing: action.value\n    };\n    return _newState;\n  }\n\n  return state;\n}",
+	"map": {
+		"version": 3,
+		"sources": [
+			"/Users/llh/Documents/map/frontend/screens/view/detail/reducer.js"
+		],
+		"names": [
+			"CHANGE_REFRESH",
+			"CHANGE_LIST",
+			"defaultState",
+			"list",
+			"refreshing",
+			"reducer",
+			"state",
+			"action",
+			"type",
+			"newState",
+			"cover",
+			"value"
+		],
+		"mappings": ";AAAA,SAASA,cAAT,EAAyBC,WAAzB;AAEA,IAAMC,YAAY,GAAG;AACjBC,EAAAA,IAAI,EAAE,EADW;AAEjBC,EAAAA,UAAU,EAAE;AAFK,CAArB;AAKA,eAAe,SAASC,OAAT,GAAgD;AAAA,MAA9BC,KAA8B,uEAAtBJ,YAAsB;AAAA,MAARK,MAAQ;;AAC3D,MAAIA,MAAM,CAACC,IAAP,KAAgBP,WAApB,EAAiC;AAC7B,QAAIQ,QAAQ,GAAG,EAAf;;AACA,QAAIF,MAAM,CAACG,KAAX,EAAkB;AACdD,MAAAA,QAAQ,GAAG;AACPN,QAAAA,IAAI,qBAAMI,MAAM,CAACJ,IAAb,CADG;AAEPC,QAAAA,UAAU,EAAE;AAFL,OAAX;AAIH,KALD,MAKO;AACHK,MAAAA,QAAQ,GAAG;AACPN,QAAAA,IAAI,+BAAMG,KAAK,CAACH,IAAZ,sBAAqBI,MAAM,CAACJ,IAA5B,EADG;AAEPC,QAAAA,UAAU,EAAE;AAFL,OAAX;AAIH;;AACD,WAAOK,QAAP;AACH,GAdD,MAeK,IAAIF,MAAM,CAACC,IAAP,KAAgBR,cAApB,EAAoC;AACrC,QAAMS,SAAQ,GAAG;AACbN,MAAAA,IAAI,qBAAMG,KAAK,CAACH,IAAZ,CADS;AAEbC,MAAAA,UAAU,EAAEG,MAAM,CAACI;AAFN,KAAjB;AAIA,WAAOF,SAAP;AACH;;AACD,SAAOH,KAAP;AACH",
+		"sourcesContent": [
+			"import { CHANGE_REFRESH, CHANGE_LIST } from './actionType';\n\nconst defaultState = {\n    list: [],\n    refreshing: false\n}\n\nexport default function reducer (state = defaultState, action) {\n    if (action.type === CHANGE_LIST) {\n        let newState = {}\n        if (action.cover) {\n            newState = {\n                list: [...action.list],\n                refreshing: false\n            }\n        } else {\n            newState = {\n                list: [...state.list, ...action.list],\n                refreshing: false\n            }\n        }\n        return newState;\n    }\n    else if (action.type === CHANGE_REFRESH) {\n        const newState = {\n            list: [...state.list],\n            refreshing: action.value\n        }\n        return newState;\n    }\n    return state\n}"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

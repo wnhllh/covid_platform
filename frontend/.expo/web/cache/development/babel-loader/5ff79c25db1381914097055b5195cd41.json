@@ -1,0 +1,33 @@
+{
+	"ast": null,
+	"code": "import _slicedToArray from \"@babel/runtime/helpers/slicedToArray\";\nimport React, { Component, useState } from 'react';\nimport View from \"react-native-web/dist/exports/View\";\nimport Button from \"react-native-web/dist/exports/Button\";\nimport Text from \"react-native-web/dist/exports/Text\";\nimport { Icon } from \"react-native-web/dist/index\";\nimport DateTimePicker from '@react-native-community/datetimepicker';\nimport { jsx as _jsx } from \"react/jsx-runtime\";\n\nvar DatePicker = function DatePicker() {\n  var _useState = useState(new Date(1651196730000)),\n      _useState2 = _slicedToArray(_useState, 2),\n      date = _useState2[0],\n      setDate = _useState2[1];\n\n  var _useState3 = useState('date'),\n      _useState4 = _slicedToArray(_useState3, 2),\n      mode = _useState4[0],\n      setMode = _useState4[1];\n\n  var onChange = function onChange(event, selectedDate) {\n    var currentDate = selectedDate;\n    setDate(currentDate);\n  };\n\n  return _jsx(View, {\n    children: _jsx(DateTimePicker, {\n      testID: \"dateTimePicker\",\n      value: date,\n      mode: mode,\n      is24Hour: true,\n      onChange: onChange\n    })\n  });\n};\n\nexport default DatePicker;",
+	"map": {
+		"version": 3,
+		"sources": [
+			"/Users/llh/Documents/map/frontend/components/DatePicker/index.js"
+		],
+		"names": [
+			"React",
+			"Component",
+			"useState",
+			"Icon",
+			"DateTimePicker",
+			"DatePicker",
+			"Date",
+			"date",
+			"setDate",
+			"mode",
+			"setMode",
+			"onChange",
+			"event",
+			"selectedDate",
+			"currentDate"
+		],
+		"mappings": ";AAAA,OAAOA,KAAP,IAAgBC,SAAhB,EAA2BC,QAA3B,QAA2C,OAA3C;;;;SAC4BC,I;AAC5B,OAAOC,cAAP,MAA2B,wCAA3B;;;AAEA,IAAMC,UAAU,GAAG,SAAbA,UAAa,GAAM;AACrB,kBAAwBH,QAAQ,CAAC,IAAII,IAAJ,CAAS,aAAT,CAAD,CAAhC;AAAA;AAAA,MAAOC,IAAP;AAAA,MAAaC,OAAb;;AACA,mBAAwBN,QAAQ,CAAC,MAAD,CAAhC;AAAA;AAAA,MAAOO,IAAP;AAAA,MAAaC,OAAb;;AAEA,MAAMC,QAAQ,GAAG,SAAXA,QAAW,CAACC,KAAD,EAAQC,YAAR,EAAyB;AACxC,QAAMC,WAAW,GAAGD,YAApB;AACAL,IAAAA,OAAO,CAACM,WAAD,CAAP;AACD,GAHD;;AAKA,SACE,KAAC,IAAD;AAAA,cAEI,KAAC,cAAD;AACE,MAAA,MAAM,EAAC,gBADT;AAEE,MAAA,KAAK,EAAEP,IAFT;AAGE,MAAA,IAAI,EAAEE,IAHR;AAIE,MAAA,QAAQ,EAAE,IAJZ;AAKE,MAAA,QAAQ,EAAEE;AALZ;AAFJ,IADF;AAYD,CArBH;;AAuBA,eAAeN,UAAf",
+		"sourcesContent": [
+			"import React, { Component, useState } from 'react';\nimport {View, Button, Text, Icon} from 'react-native'\nimport DateTimePicker from '@react-native-community/datetimepicker';\n\nconst DatePicker = () => {\n    const [date, setDate] = useState(new Date(1651196730000));\n    const [mode, setMode] = useState('date');\n  \n    const onChange = (event, selectedDate) => {\n      const currentDate = selectedDate;\n      setDate(currentDate);\n    };\n  \n    return (\n      <View>\n        {/* <Text>selected: {date.toLocaleString()}</Text> */}\n          <DateTimePicker\n            testID=\"dateTimePicker\"\n            value={date}\n            mode={mode}\n            is24Hour={true}\n            onChange={onChange}\n          />\n      </View>\n    );\n  }\n\nexport default DatePicker;"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

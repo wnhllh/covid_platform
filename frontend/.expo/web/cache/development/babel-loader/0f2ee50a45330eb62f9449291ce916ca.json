@@ -1,1 +1,15 @@
-{"ast":null,"code":"import * as React from 'react';\nimport { Provider } from 'react-redux';\nimport store from \"./store/\";\nimport RouteApp from \"./navigation/App\";\nimport { jsx as _jsx } from \"react/jsx-runtime\";\n\nvar App = function App(props) {\n  return _jsx(Provider, {\n    store: store,\n    children: _jsx(RouteApp, {})\n  });\n};\n\nexport default App;","map":{"version":3,"sources":["/Users/llh/Documents/map/frontend/App.js"],"names":["React","Provider","store","RouteApp","App","props"],"mappings":"AAAA,OAAO,KAAKA,KAAZ,MAAuB,OAAvB;AACA,SAASC,QAAT,QAAyB,aAAzB;AACA,OAAOC,KAAP;AAEA,OAAOC,QAAP;;;AAEA,IAAMC,GAAG,GAAG,SAANA,GAAM,CAACC,KAAD,EAAW;AACrB,SACE,KAAC,QAAD;AAAU,IAAA,KAAK,EAAEH,KAAjB;AAAA,cACE,KAAC,QAAD;AADF,IADF;AAKD,CAND;;AAQA,eAAeE,GAAf","sourcesContent":["import * as React from 'react';\nimport { Provider } from 'react-redux'\nimport store from './store/'\n\nimport RouteApp from './navigation/App'\n\nconst App = (props) => {\n  return (\n    <Provider store={store}>\n      <RouteApp />\n    </Provider>\n  )\n}\n\nexport default App;"]},"metadata":{},"sourceType":"module"}
+{
+	"ast": null,
+	"code": "import * as React from 'react';\nimport { Provider } from 'react-redux';\nimport store from \"./store/\";\nimport RouteApp from \"./navigation/App\";\nimport { jsx as _jsx } from \"react/jsx-runtime\";\n\nvar App = function App(props) {\n  return _jsx(Provider, {\n    store: store,\n    children: _jsx(RouteApp, {})\n  });\n};\n\nexport default App;",
+	"map": {
+		"version": 3,
+		"sources": ["/Users/llh/Documents/map/frontend/App.js"],
+		"names": ["React", "Provider", "store", "RouteApp", "App", "props"],
+		"mappings": "AAAA,OAAO,KAAKA,KAAZ,MAAuB,OAAvB;AACA,SAASC,QAAT,QAAyB,aAAzB;AACA,OAAOC,KAAP;AAEA,OAAOC,QAAP;;;AAEA,IAAMC,GAAG,GAAG,SAANA,GAAM,CAACC,KAAD,EAAW;AACrB,SACE,KAAC,QAAD;AAAU,IAAA,KAAK,EAAEH,KAAjB;AAAA,cACE,KAAC,QAAD;AADF,IADF;AAKD,CAND;;AAQA,eAAeE,GAAf",
+		"sourcesContent": [
+			"import * as React from 'react';\nimport { Provider } from 'react-redux'\nimport store from './store/'\n\nimport RouteApp from './navigation/App'\n\nconst App = (props) => {\n  return (\n    <Provider store={store}>\n      <RouteApp />\n    </Provider>\n  )\n}\n\nexport default App;"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

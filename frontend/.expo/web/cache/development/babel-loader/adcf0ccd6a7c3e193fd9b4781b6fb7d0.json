@@ -1,0 +1,25 @@
+{
+	"ast": null,
+	"code": "import React, { useState, useEffect } from 'react';\nimport View from \"react-native-web/dist/exports/View\";\nimport Text from \"react-native-web/dist/exports/Text\";\nimport TouchableOpacity from \"react-native-web/dist/exports/TouchableOpacity\";\nimport styles from \"./styles\";\nimport { jsx as _jsx } from \"react/jsx-runtime\";\n\nvar Button = function Button(_ref) {\n  var text = _ref.text,\n      navigation = _ref.navigation;\n  return _jsx(TouchableOpacity, {\n    onPress: navigation,\n    children: _jsx(View, {\n      style: styles.button,\n      children: _jsx(Text, {\n        style: styles.buttonText,\n        children: text\n      })\n    })\n  });\n};\n\nexport default Button;",
+	"map": {
+		"version": 3,
+		"sources": ["/Users/llh/Documents/map/frontend/components/Button/index.js"],
+		"names": [
+			"React",
+			"useState",
+			"useEffect",
+			"styles",
+			"Button",
+			"text",
+			"navigation",
+			"button",
+			"buttonText"
+		],
+		"mappings": "AAAA,OAAOA,KAAP,IAAgBC,QAAhB,EAA0BC,SAA1B,QAA2C,OAA3C;;;;AAGA,OAAOC,MAAP;;;AAEA,IAAMC,MAAM,GAAG,SAATA,MAAS,OAAwB;AAAA,MAAtBC,IAAsB,QAAtBA,IAAsB;AAAA,MAAhBC,UAAgB,QAAhBA,UAAgB;AACnC,SACI,KAAC,gBAAD;AAAkB,IAAA,OAAO,EAAEA,UAA3B;AAAA,cACE,KAAC,IAAD;AAAM,MAAA,KAAK,EAAEH,MAAM,CAACI,MAApB;AAAA,gBACE,KAAC,IAAD;AAAM,QAAA,KAAK,EAAEJ,MAAM,CAACK,UAApB;AAAA,kBAAiCH;AAAjC;AADF;AADF,IADJ;AAOH,CARD;;AAUA,eAAeD,MAAf",
+		"sourcesContent": [
+			"import React, { useState, useEffect } from 'react';\nimport { View, Text, TouchableOpacity } from 'react-native';\n\nimport styles from './styles';\n\nconst Button = ({text, navigation}) => {\n    return (\n        <TouchableOpacity onPress={navigation}>\n          <View style={styles.button}>\n            <Text style={styles.buttonText}>{text}</Text>\n          </View>\n        </TouchableOpacity>\n    )\n}\n\nexport default Button;"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

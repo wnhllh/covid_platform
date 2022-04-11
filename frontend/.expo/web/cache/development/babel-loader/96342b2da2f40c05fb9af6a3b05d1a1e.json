@@ -1,1 +1,15 @@
-{"ast":null,"code":"import { createStore, applyMiddleware } from 'redux';\nimport reducer from \"./reducer\";\nimport thunk from 'redux-thunk';\nvar store = createStore(reducer, applyMiddleware(thunk));\nexport default store;","map":{"version":3,"sources":["/Users/llh/Documents/map/frontend/store/index.js"],"names":["createStore","applyMiddleware","reducer","thunk","store"],"mappings":"AAAA,SAASA,WAAT,EAAsBC,eAAtB,QAA6C,OAA7C;AACA,OAAOC,OAAP;AACA,OAAOC,KAAP,MAAkB,aAAlB;AAEA,IAAMC,KAAK,GAAGJ,WAAW,CAACE,OAAD,EAAUD,eAAe,CAACE,KAAD,CAAzB,CAAzB;AAEA,eAAeC,KAAf","sourcesContent":["import { createStore, applyMiddleware } from 'redux'\nimport reducer from './reducer'\nimport thunk from 'redux-thunk'\n\nconst store = createStore(reducer, applyMiddleware(thunk));\n\nexport default store"]},"metadata":{},"sourceType":"module"}
+{
+	"ast": null,
+	"code": "import { createStore, applyMiddleware } from 'redux';\nimport reducer from \"./reducer\";\nimport thunk from 'redux-thunk';\nvar store = createStore(reducer, applyMiddleware(thunk));\nexport default store;",
+	"map": {
+		"version": 3,
+		"sources": ["/Users/llh/Documents/map/frontend/store/index.js"],
+		"names": ["createStore", "applyMiddleware", "reducer", "thunk", "store"],
+		"mappings": "AAAA,SAASA,WAAT,EAAsBC,eAAtB,QAA6C,OAA7C;AACA,OAAOC,OAAP;AACA,OAAOC,KAAP,MAAkB,aAAlB;AAEA,IAAMC,KAAK,GAAGJ,WAAW,CAACE,OAAD,EAAUD,eAAe,CAACE,KAAD,CAAzB,CAAzB;AAEA,eAAeC,KAAf",
+		"sourcesContent": [
+			"import { createStore, applyMiddleware } from 'redux'\nimport reducer from './reducer'\nimport thunk from 'redux-thunk'\n\nconst store = createStore(reducer, applyMiddleware(thunk));\n\nexport default store"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

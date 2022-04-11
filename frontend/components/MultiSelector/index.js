@@ -1,25 +1,26 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react'
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 
-export default function MultiSelector({ selectionMode,
-	optionlist, onSelectSwitch }) {
-	const [getSelectionMode, setSelectionMode] = useState([]);
+export default function MultiSelector ({
+	selectionMode,
+	optionlist,
+	onSelectSwitch
+}) {
+	const [getSelectionMode, setSelectionMode] = useState([])
 
 	const updateSwitchData = (value) => {
 		if (getSelectionMode.includes(value)) {
-			const updatedItems = getSelectionMode.filter(res => res !== value)
+			const updatedItems = getSelectionMode.filter((res) => res !== value)
 			return setSelectionMode(updatedItems)
 		}
-		setSelectionMode([...getSelectionMode, value]);
-		onSelectSwitch([...getSelectionMode, value]);
+		setSelectionMode([...getSelectionMode, value])
+		onSelectSwitch([...getSelectionMode, value])
 	}
 
 	// console.log(getSelectionMode)
 
 	return (
-		<View
-			style={[styles.listWrapper]}
-		>
+		<View style={[styles.listWrapper]}>
 			{optionlist.map((category, index) => (
 				<TouchableOpacity
 					key={index}
@@ -27,22 +28,27 @@ export default function MultiSelector({ selectionMode,
 					onPress={() => updateSwitchData(index + 1)}
 					style={{
 						// flex: 1,
-						backgroundColor: getSelectionMode.includes(index + 1) ? 'orange' : '#f1f1f1',
+						backgroundColor: getSelectionMode.includes(index + 1)
+							? 'orange'
+							: '#f1f1f1',
 						borderRadius: 5,
 						margin: 5,
 						paddingHorizontal: 15,
 						justifyContent: 'center',
 						alignItems: 'center',
-						height: 27,
+						height: 27
 					}}
 				>
 					<Text
-						style={[styles.listText, getSelectionMode.includes(index + 1) && styles.activeListText]}
+						style={[
+							styles.listText,
+							getSelectionMode.includes(index + 1) && styles.activeListText
+						]}
 					>
-						{category}</Text>
+						{category}
+					</Text>
 				</TouchableOpacity>
-			))
-			}
+			))}
 		</View>
 	)
 }
@@ -55,17 +61,19 @@ const styles = StyleSheet.create({
 		// alignItems: 'center',
 		// height: '100%',
 		width: '100%',
-		 
-		 backgroundColor: 'white', borderRadius: 7, borderColor: '#ad40af'
+
+		backgroundColor: 'white',
+		borderRadius: 7,
+		borderColor: '#ad40af'
 	},
 	listText: {
 		fontSize: 12,
 		fontWeight: 'bold',
-		color: 'gray',
+		color: 'gray'
 	},
 	activeListText: {
 		color: 'white',
-		borderBottomWidth: 1,
+		borderBottomWidth: 1
 		// textDecorationLine: 'underline'
 	}
 })

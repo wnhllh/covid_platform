@@ -1,1 +1,15 @@
-{"ast":null,"code":"var sliderData = [{\n  title: 'Venue 1',\n  image: require(\"../assets/images/long.jpeg\")\n}, {\n  title: 'Venue 2',\n  image: require(\"../assets/images/long.jpeg\")\n}, {\n  title: 'Venue 3',\n  image: require(\"../assets/images/long.jpeg\")\n}];\nexport default sliderData;","map":{"version":3,"sources":["/Users/llh/Documents/map/frontend/data/venueData.js"],"names":["sliderData","title","image","require"],"mappings":"AAAA,IAAMA,UAAU,GAAG,CACnB;AACIC,EAAAA,KAAK,EAAE,SADX;AAEIC,EAAAA,KAAK,EAAEC,OAAO;AAFlB,CADmB,EAKnB;AACIF,EAAAA,KAAK,EAAE,SADX;AAEIC,EAAAA,KAAK,EAAEC,OAAO;AAFlB,CALmB,EASnB;AACIF,EAAAA,KAAK,EAAE,SADX;AAEIC,EAAAA,KAAK,EAAEC,OAAO;AAFlB,CATmB,CAAnB;AAeA,eAAeH,UAAf","sourcesContent":["const sliderData = [\n{\n    title: 'Venue 1',\n    image: require('../assets/images/long.jpeg'),\n},\n{\n    title: 'Venue 2',\n    image: require('../assets/images/long.jpeg'),\n},\n{\n    title: 'Venue 3',\n    image: require('../assets/images/long.jpeg'),\n},\n];\n\nexport default sliderData;"]},"metadata":{},"sourceType":"module"}
+{
+	"ast": null,
+	"code": "var sliderData = [{\n  title: 'Venue 1',\n  image: require(\"../assets/images/long.jpeg\")\n}, {\n  title: 'Venue 2',\n  image: require(\"../assets/images/long.jpeg\")\n}, {\n  title: 'Venue 3',\n  image: require(\"../assets/images/long.jpeg\")\n}];\nexport default sliderData;",
+	"map": {
+		"version": 3,
+		"sources": ["/Users/llh/Documents/map/frontend/data/venueData.js"],
+		"names": ["sliderData", "title", "image", "require"],
+		"mappings": "AAAA,IAAMA,UAAU,GAAG,CACnB;AACIC,EAAAA,KAAK,EAAE,SADX;AAEIC,EAAAA,KAAK,EAAEC,OAAO;AAFlB,CADmB,EAKnB;AACIF,EAAAA,KAAK,EAAE,SADX;AAEIC,EAAAA,KAAK,EAAEC,OAAO;AAFlB,CALmB,EASnB;AACIF,EAAAA,KAAK,EAAE,SADX;AAEIC,EAAAA,KAAK,EAAEC,OAAO;AAFlB,CATmB,CAAnB;AAeA,eAAeH,UAAf",
+		"sourcesContent": [
+			"const sliderData = [\n{\n    title: 'Venue 1',\n    image: require('../assets/images/long.jpeg'),\n},\n{\n    title: 'Venue 2',\n    image: require('../assets/images/long.jpeg'),\n},\n{\n    title: 'Venue 3',\n    image: require('../assets/images/long.jpeg'),\n},\n];\n\nexport default sliderData;"
+		]
+	},
+	"metadata": {},
+	"sourceType": "module"
+}

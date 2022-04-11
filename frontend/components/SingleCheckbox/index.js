@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
-import { Fontisto } from 'react-native-vector-icons';
+import React, { useState } from 'react'
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
+import { Fontisto } from 'react-native-vector-icons'
 
-export default function SingleCheckbox({ selectionMode,
-	optionlist, onSelectSwitch }) {
-	const [getSelectionMode, setSelectionMode] = useState('');
+export default function SingleCheckbox ({
+	selectionMode,
+	optionlist,
+	onSelectSwitch
+}) {
+	const [getSelectionMode, setSelectionMode] = useState('')
 
 	const updateSwitchData = (value) => {
-		setSelectionMode(value);
-		onSelectSwitch(value);
+		setSelectionMode(value)
+		onSelectSwitch(value)
 	}
 
 	// console.log(getSelectionMode)
 
 	return (
-		<View
-			style={[styles.listWrapper]}
-		>
+		<View style={[styles.listWrapper]}>
 			{optionlist.map((category, index) => (
 				<TouchableOpacity
 					key={index}
@@ -31,25 +32,21 @@ export default function SingleCheckbox({ selectionMode,
 						paddingHorizontal: 5,
 						justifyContent: 'space-between',
 						alignItems: 'center',
-						height: 30,
+						height: 30
 					}}
 				>
 					<View style={styles.box}>
-						{getSelectionMode === index + 1 &&
+						{getSelectionMode === index + 1 && (
 							<Fontisto name={'radio-btn-active'} size={15} />
-						}
-						{getSelectionMode !== index + 1 &&
+						)}
+						{getSelectionMode !== index + 1 && (
 							<Fontisto name={'radio-btn-passive'} size={15} />
-						}
+						)}
 					</View>
 
-					<Text
-						style={[styles.listText]}
-					>
-						{category}</Text>
+					<Text style={[styles.listText]}>{category}</Text>
 				</TouchableOpacity>
-			))
-			}
+			))}
 		</View>
 	)
 }
@@ -64,13 +61,14 @@ const styles = StyleSheet.create({
 		width: '100%',
 
 		// backgroundColor: 'white',
-		borderRadius: 7, borderColor: '#ad40af'
+		borderRadius: 7,
+		borderColor: '#ad40af'
 	},
 	box: {
-		marginRight: 5,
+		marginRight: 5
 	},
 	listText: {
 		fontSize: 14,
-		color: 'black',
-	},
+		color: 'black'
+	}
 })
