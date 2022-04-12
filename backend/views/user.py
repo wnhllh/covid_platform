@@ -2,7 +2,7 @@ import sys, os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.crypt import pwd
-from utils.cache import save_token, clear_token, get_user_id_by_token
+from cache.user import save_token, clear_token, get_user_id_by_token
 
 import uuid
 from flask import Blueprint, make_response, request, jsonify

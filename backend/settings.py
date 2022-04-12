@@ -8,4 +8,7 @@ class Dev():
     # SQLALCHEMY_ECHO = True
     
     SESSION_TYPE = 'redis'
-    SESSION_REDIS = Redis(host='127.0.0.1', db=8)
+    SESSION_REDIS = Redis(host='localhost', db=8)
+    
+    CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672'
+    CELERY_BACKEND = 'redis://localhost:6379/0'

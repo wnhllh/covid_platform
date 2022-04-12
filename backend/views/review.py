@@ -1,3 +1,6 @@
+import sys, os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from flask import Blueprint, jsonify
 from models.review import db, Review
 from schemas.review import review_schema, reviews_schema
